@@ -1,0 +1,964 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="hu" class="scroll-smooth"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="utf-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Lunar Agency - AI &amp; Automatizáció&lt;/title&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PERFORMANCE: Preconnect to critical third-party origins to speed up DNS lookup, TCP handshake, and TLS negotiation. This can significantly reduce latency for fetching resources. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://storage.googleapis.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://unpkg.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- OPTIMIZATION: Preload the LCP (Largest Contentful Paint) image to load it sooner. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preload" fetchpriority="high" as="image" href="https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png" type="image/png"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- OPTIMIZATION: Load Google Fonts CSS asynchronously to prevent render-blocking. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&amp;amp;family=Inter:wght@300;400;500;600&amp;amp;family=Playfair+Display:wght@400;700&amp;amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;noscript&gt;&lt;link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&amp;amp;family=Inter:wght@300;400;500;600&amp;amp;family=Playfair+Display:wght@400;700&amp;amp;display=swap" rel="stylesheet"&gt;&lt;/noscript&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PERFORMANCE NOTE: Tailwind CSS via CDN uses a Just-in-Time (JIT) compiler script. While convenient, this script is flagged as render-blocking because it must run before the page is fully styled. For optimal production performance, using a build process to generate a static, minified CSS file is the recommended approach. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ENHANCEMENT: Removed math.js dependency as native Math object is sufficient. --&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- OPTIMIZATION: Defer loading of non-critical scripts (icons) to prevent render-blocking. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/lucide@latest" defer&gt;&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #0a0a0a;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.font-geist {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Geist Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes letterSlideIn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { transform: translateY(-100%); opacity: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { transform: translateY(0); opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes slideUp {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(20px); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Add prefers-reduced-motion media query to disable animations */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (prefers-reduced-motion: reduce) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>*,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>*::before,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>*::after {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation-duration: 0.01ms !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation-iteration-count: 1 !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition-duration: 0.01ms !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: auto !important;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.animate-letter-slide-in { animation: letterSlideIn 0.8s ease-out forwards; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.animate-slide-up { animation: slideUp 0.6s ease-out both; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- FAQ STYLES --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.faq-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>visibility: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.faq-item.is-open .faq-trigger-inner {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #374151; /* gray-700 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.faq-icon-emoji {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.faq-chevron {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.faq-item.is-open .faq-chevron {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: rotate(180deg);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes slideInBlur {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transform: translateY(32px); /* translate-y-8 */</p>
+<p class="p1"><span class="Apple-converted-space">                </span>filter: blur(4px); /* blur-sm */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transform: translateY(0px);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>filter: blur(0px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">     </span>&lt;!-- SEO: ADDED JSON-LD STRUCTURED DATA (SCHEMA MARKUP) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script type="application/ld+json"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"@context": "https://schema.org",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"@graph": [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"@type": "Organization",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"name": "Lunar Agency",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"url": "https://www.lunaragency.hu/",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"logo": "https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"contactPoint": {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"@type": "ContactPoint",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"email": "support@lunaragency.hu",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"contactType": "customer support"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>},</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"description": "AI és automatizációs marketing ügynökség magyar vállalkozások növekedéséért. Szolgáltatásaink: AI chatbotok, munkafolyamat-automatizálás, CRM és ügyfélszerző weboldalak."</p>
+<p class="p1"><span class="Apple-converted-space">        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"@type": "WebSite",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"url": "https://www.lunaragency.hu/",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"name": "Lunar Agency",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"publisher": {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"@type": "Organization",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"name": "Lunar Agency"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"@type": "Service",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"serviceType": "Marketing Automatizálás",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"name": "AI Chatbot és Automatizációs Rendszer",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"description": "Kulcsrakész AI chatbot és marketing automatizációs rendszer, amely 24/7-ben dolgozik a vállalkozásáért. Időpontot foglal, minősíti az érdeklődőket és növeli a konverziót.",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"provider": {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"@type": "Organization",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"name": "Lunar Agency"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>},</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"offers": [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"@type": "Offer",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"name": "Lunar Start Csomag",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"price": "50000",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"priceCurrency": "HUF",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"description": "Profi szoftver és weboldal a vállalkozásának, AI Chatbottal, CRM-mel és munkafolyamat-automatizálással. Egyszeri beállítási díj: 250.000 Ft.",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"url": "https://www.lunaragency.hu/#arazas"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"@type": "Offer",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"name": "Lunar Scale Csomag",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"price": "200000",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"priceCurrency": "HUF",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"description": "Kulcsrakész megoldás az ügyfélszerzésre, amely tartalmazza a Start csomag minden elemét, kiegészítve hirdetéskezeléssel, SEO-val és havi stratégiai konzultációval. Egyszeri beállítási díj: 250.000 Ft.",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"url": "https://www.lunaragency.hu/#arazas"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>]</p>
+<p class="p1"><span class="Apple-converted-space">        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"@type": "FAQPage",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"mainEntity": [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"@type": "Question",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"name": "Ez egy szoftver vagy egy szolgáltatás?",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"acceptedAnswer": {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"@type": "Answer",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"text": "Ez egy all-in-one marketing rendszer, amit a vállalkozására szabunk. Nem csak egy szoftvert kap, hanem automatikusan beállított eszközöket (CRM, időpontfoglaló, weboldal, funnel, stb.), és betanítást és támogatást is mellé."</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"@type": "Question",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"name": "Miben különbözik ez a rendszer más szoftverektől?",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"acceptedAnswer": {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"@type": "Answer",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"text": "Ez nem csak egy szoftver – hanem 33 szoftver ereje egy rendszerbe integrálva. Nem kell külön fizetnie több százezreket-milliókat weboldalért, időpontfoglalóért, e-mail küldőért, CRM-ért – itt minden egy helyen van, automatikusan beállítva."</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"@type": "Question",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"name": "Mi van, ha van már weboldalam?",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"acceptedAnswer": {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"@type": "Answer",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"text": "Semmi gond! A rendszerünket tudjuk integrálni a meglévő weboldalába is, de ha egy új, modernebb és letisztultabb megjelenésre vágyik, akkor szívesen elkészítjük az új weboldalát a rendszereinken belül."</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"@type": "Question",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"name": "Nem vagyok biztos benne, hogy nekem ez tényleg működni fog...",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"acceptedAnswer": {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"@type": "Answer",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"text": "Ez teljesen érthető, mivel ez nem egy “mindenkinek ugyanaz” megoldás. Foglaljon egy ingyenes konzultációt, mely során felderítjük, mit érdemes automatizálni, kik az ideális ügyfelek, és hogyan takarít meg az AI rengeteg értékes időt."</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"@type": "Question",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"name": "Mennyi idő múlva lesz ebből ügyfél?",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"acceptedAnswer": {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"@type": "Answer",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"text": "Ez mindig iparágfüggő, de a rendszer célja, hogy automatizálja a leadgenerálást és kapcsolatépítést, így gyorsabban és hatékonyabban konvertál, mint kézi módszerrel. Amint a lehető legtöbb ügyfélre vágyik, erre is van megoldás: kérheti tőlünk a Lunar Scale (hírdetéskezelés) csomagunkat, így garantáltan eljut az üzenete a célközönségéhez."</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"@type": "Question",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"name": "Mi történik a hirdetésekből jövő érdeklődőkkel?",</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"acceptedAnswer": {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"@type": "Answer",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"text": "A rendszerünk automatikusan begyűjti őket, és azonnal elkezdi az utánkövetést: e-mail, SMS, – mindent automatizálunk, hogy ne vesszen el egyetlen lead sem."</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>]</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="h-full antialiased text-zinc-100 bg-gradient-to-b from-[#000000] to-[#1c1c1c]/20"&gt;</p>
+<p class="p1">&lt;!-- Background Animation --&gt;</p>
+<p class="p1">&lt;div class="aura-background-component top-0 w-full h-screen -z-10 absolute"&gt;&lt;div class="aura-background-component top-0 w-full -z-10 absolute h-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div data-us-project="2IcJ39Gx68KiPG1qlgj8" class="absolute w-full h-full left-0 top-0 -z-10"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script type="text/javascript"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>(function(){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(window.UnicornStudio) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.UnicornStudio = {isInitialized: false};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var script = document.createElement("script");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>script.onload = function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (window.UnicornStudio &amp;&amp; !window.UnicornStudio.isInitialized) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>var result = window.UnicornStudio.init();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (result &amp;&amp; typeof result.catch === 'function') {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>result.catch(function(error) { console.error("Unicorn Studio promise was rejected:", error); });</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>window.UnicornStudio.isInitialized = true;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>console.error("Error initializing Unicorn Studio:", error);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>script.onerror = function() { console.error("Failed to load Unicorn Studio script."); };</p>
+<p class="p1"><span class="Apple-converted-space">        </span>(document.head || document.body).appendChild(script);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>})();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1">&lt;div class="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Header &amp; Navigation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;nav aria-label="Fő navigáció" class="relative z-50 flex items-center justify-between h-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="text-lg font-medium tracking-tight font-geist text-neutral-100"&gt;lunar agency&lt;/a&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hidden md:flex items-center gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#szolgaltatasok" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100"&gt;Szolgáltatások&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#arazas" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100"&gt;Árazás&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#gyik" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100"&gt;GYIK&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="button" data-modal-trigger="consultation-modal" class="inline-flex items-center justify-center gap-2 transition-colors text-sm font-medium font-geist border rounded-full px-6 py-3 hover:bg-white/10 text-neutral-100 bg-white/5 border-white/10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Ingyenes Konzultáció</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"&gt;&lt;path d="M5 12h14"&gt;&lt;/path&gt;&lt;path d="m12 5 7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="md:hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="menu-btn" type="button" aria-expanded="false" class="z-50 p-2 -mr-2 text-neutral-200 hover:text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="sr-only"&gt;Menü megnyitása&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="menu-open-icon" class="h-6 w-6"&gt;&lt;path d="M4 12h16"&gt;&lt;/path&gt;&lt;path d="M4 18h16"&gt;&lt;/path&gt;&lt;path d="M4 6h16"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="menu-close-icon" class="h-6 w-6 hidden"&gt;&lt;path d="M18 6 6 18"&gt;&lt;/path&gt;&lt;path d="m6 6 12 12"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="mobile-menu" class="hidden fixed inset-0 z-40 backdrop-blur-lg bg-neutral-950/95"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col items-center justify-center h-full gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#szolgaltatasok" class="text-2xl font-geist text-neutral-200"&gt;Szolgáltatások&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#arazas" class="text-2xl font-geist text-neutral-200"&gt;Árazás&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#gyik" class="text-2xl font-geist text-neutral-200"&gt;GYIK&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="button" data-modal-trigger="consultation-modal" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-base transition-colors font-geist border-white/10 bg-white/5 hover:bg-white/10 text-neutral-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Ingyenes Konzultáció</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"&gt;&lt;path d="M5 12h14"&gt;&lt;/path&gt;&lt;path d="m12 5 7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="mt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Hero Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="relative overflow-hidden sm:py-10 py-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-7xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- PERFORMANCE NOTE: The background image for this hero section is a critical element for the LCP. The current image is quite large (~1MB). For a significant performance improvement, consider compressing this image further or serving it in a next-gen format like WebP or AVIF. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative min-h-[520px] sm:minh-[640px] lg:min-h-[720px] flex flex-col bg-center p-4 sm:p-12 lg:p-20 bg-neutral-950 bg-cover border-white/10 border rounded-3xl" style="background-image: url('https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png');"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;header class="mb-12 sm:mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h1 class="block sm:text-8xl md:text-9xl lg:text-[10vw] text-6xl font-semibold" style="letter-spacing: -0.075em;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="inline-block animate-letter-slide-in text-neutral-50 font-geist" style="animation-delay: 0s;"&gt;L&lt;/span&gt;&lt;span class="inline-block animate-letter-slide-in text-neutral-200 font-geist" style="animation-delay: 0.1s;"&gt;U&lt;/span&gt;&lt;span class="inline-block animate-letter-slide-in text-neutral-400 font-geist" style="animation-delay: 0.2s;"&gt;N&lt;/span&gt;&lt;span class="inline-block animate-letter-slide-in text-neutral-500 font-geist" style="animation-delay: 0.3s;"&gt;A&lt;/span&gt;&lt;span class="inline-block animate-letter-slide-in text-neutral-600 font-geist" style="animation-delay: 0.4s;"&gt;R&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 mt-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col justify-end"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex gap-4 items-start"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="mt-1 w-6 h-12 border-l border-b rounded-sm border-white/20"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="leading-6 text-sm text-neutral-300 font-geist"&gt;Dolgozzon kevesebbet. Érjen el többet.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;button type="button" data-modal-trigger="consultation-modal" class="inline-flex items-center justify-center gap-2 transition-colors text-sm font-medium font-geist border rounded-full px-6 py-3 hover:bg-white/10 text-neutral-100 bg-white/5 border-white/10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>Ingyenes Konzultáció</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"&gt;&lt;path d="M5 12h14"&gt;&lt;/path&gt;&lt;path d="m12 5 7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-end"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="sm:text-2xl text-xl font-light text-neutral-50 tracking-tight font-geist"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>A magyar vállalkozásokat formáljuk &lt;span class="font-semibold text-white"&gt;merészséggel&lt;/span&gt;, &lt;span class="text-neutral-50"&gt;vízióval&lt;/span&gt; és &lt;span class="font-semibold text-white"&gt;együttműködő&lt;/span&gt; szellemmel. Üdvözöljük ügynökségünknél, ahol az innováció virágzik.</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Services Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="szolgaltatasok" class="py-16 sm:py-24 scroll-mt-24"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-7xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative overflow-hidden bg-neutral-950/70 rounded-3xl p-4 sm:p-12 lg:p-16 border border-white/10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="pointer-events-none absolute -top-24 -left-32 h-72 w-72 rounded-full bg-white/[0.06] blur-3xl"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="pointer-events-none absolute -bottom-32 -right-24 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="lg:mb-16 text-center mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="sm:text-5xl lg:text-6xl text-4xl tracking-tight font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-100 via-neutral-200 to-neutral-400/90 mb-4 opacity-0 translate-y-8 blur-sm pb-2" style="animation: slideInBlur 1s ease-out 0.5s forwards;"&gt;Weboldalak, amelyek &lt;span class="italic font-['Playfair_Display']"&gt;szolgálnak&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="max-w-2xl text-neutral-400 mx-auto"&gt;AI chatbotokkal, automatizált ügyfélszerzéssel és egységes kommunikációval.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-1 lg:grid-cols-3 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;article data-reveal="" data-reveal-index="0" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-black/30 min-h-[480px] p-6 sm:p-8 flex flex-col ring-0 transition-all duration-500 hover:border-white/20 hover:shadow-[0_30px_100px_-40px_rgba(59,130,246,0.35)]" style="transform: translateY(28px) scale(0.98); opacity: 0; filter: blur(6px);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" style="background: radial-gradient(600px 300px at var(--px,50%) var(--py,0%), rgba(255,255,255,0.18), transparent 70%);"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex items-center gap-3 relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="rounded-xl p-2 ring-1 ring-white/10 bg-white/10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;i data-lucide="bot" class="h-6 w-6 text-blue-300"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p class="font-semibold text-white tracking-tight"&gt;AI Chatbot&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p class="text-sm text-neutral-400"&gt;Személyre szabva&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="mt-auto relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;h3 class="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-4"&gt;24/7-es &lt;span class="text-blue-300"&gt;Értékesítő&lt;/span&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm text-neutral-300 mb-6"&gt;Mindig elérhető, ismeri a vállalkozását, időpontot foglal, és növeli az üzleti eredményeit. Testre szabjuk a Weboldalán, SMS-en, Facebook Messengeren és WhatsApp-on is.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex flex-wrap gap-2 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300"&gt;Omnichannel&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300"&gt;Időpontfoglalás&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300"&gt;Vásárlói szándék felismerés&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;button type="button" data-modal-trigger="consultation-modal" class="inline-flex items-center justify-center gap-2 text-sm font-medium text-neutral-100 rounded-full border border-white/10 bg-white/5 px-6 py-3 transition-colors hover:bg-white/10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>Ismerje meg módszerünket</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;i data-lucide="arrow-up-right" class="h-4 w-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;!-- subtle bottom accent --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;article data-reveal="" data-reveal-index="1" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] p-6 sm:p-8 flex flex-col transition-all duration-500 hover:border-white/20 hover:bg-white/[0.08] hover:shadow-[0_30px_90px_-40px_rgba(255,255,255,0.25)]" style="transform: translateY(28px) scale(0.98); opacity: 0; filter: blur(6px);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="absolute -top-16 -right-12 h-40 w-40 rounded-full bg-blue-400/10 blur-2xl"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="bg-white/10 ring-1 ring-white/10 rounded-lg p-2 w-min mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;i data-lucide="workflow" class="h-5 w-5 text-blue-300"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 class="text-xl font-semibold text-neutral-100 tracking-tight"&gt;Munkafolyamat-automatizálás&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p class="text-sm text-neutral-400 mt-2"&gt;Felderítjük, mit érdemes automatizálni a vállalkozásában, kik az ideális ügyfelei, és hogyan takarít meg az AI rengeteg értékes időt.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;ul class="mt-4 space-y-2 text-sm text-neutral-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;li class="flex items-center gap-2"&gt;&lt;i data-lucide="check" class="h-4 w-4 text-blue-300"&gt;&lt;/i&gt;Lead minősítés és routing&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;li class="flex items-center gap-2"&gt;&lt;i data-lucide="check" class="h-4 w-4 text-blue-300"&gt;&lt;/i&gt;Trigger-alapú értesítések&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;li class="flex items-center gap-2"&gt;&lt;i data-lucide="check" class="h-4 w-4 text-blue-300"&gt;&lt;/i&gt;Időalapú utánkövetés&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;article data-reveal="" data-reveal-index="2" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] p-6 sm:p-8 flex flex-col transition-all duration-500 hover:border-white/20 hover:bg-white/[0.08] hover:shadow-[0_30px_90px_-40px_rgba(255,255,255,0.25)]" style="transform: translateY(28px) scale(0.98); opacity: 0; filter: blur(6px);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="bg-white/10 ring-1 ring-white/10 rounded-lg p-2 w-min mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;i data-lucide="trending-up" class="h-5 w-5 text-blue-300"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 class="text-xl font-semibold text-neutral-100 tracking-tight"&gt;Mérhető eredmények&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p class="text-sm text-neutral-400 mt-2"&gt;Tűpontosan látható, melyik csatorna hozza a valódi vevőket. Adatalapú döntések, maximális megtérülés (ROI).&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="mt-4 grid grid-cols-3 gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div class="rounded-lg border border-white/10 bg-white/5 px-3 py-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;p class="text-xs text-neutral-400"&gt;CPL&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;p class="text-sm font-semibold tracking-tight"&gt;-32%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div class="rounded-lg border border-white/10 bg-white/5 px-3 py-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;p class="text-xs text-neutral-400"&gt;Konverzió&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;p class="text-sm font-semibold tracking-tight"&gt;+48%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div class="rounded-lg border border-white/10 bg-white/5 px-3 py-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;p class="text-xs text-neutral-400"&gt;Válaszidő&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;p class="text-sm font-semibold tracking-tight"&gt;-72%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;article data-reveal="" data-reveal-index="3" class="md:col-span-2 group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-black/30 p-6 sm:p-8 flex flex-col transition-all duration-500 hover:border-white/20 hover:shadow-[0_30px_100px_-40px_rgba(59,130,246,0.35)]" style="transform: translateY(28px) scale(0.98); opacity: 0; filter: blur(6px);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="absolute -top-24 -left-16 h-56 w-56 rounded-full bg-blue-400/15 blur-3xl"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="bg-white/10 ring-1 ring-white/10 rounded-lg p-2 w-min mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;i data-lucide="inbox" class="h-5 w-5 text-blue-300"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;h3 class="text-xl font-semibold text-white tracking-tight"&gt;Minden érdeklődő egy helyen&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;p class="text-sm text-neutral-400 mt-2 max-w-2xl"&gt;Nem kell többé 5 különböző platform között ugrálnia. Email, SMS, Facebook, Instagram – minden üzenet egyetlen, átlátható felületen landol. Az eredmény: azonnali válasz, nulla elveszett ügyfél.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div class="flex gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300"&gt;Email&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300"&gt;SMS&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300"&gt;Messenger&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300"&gt;Instagram&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="mt-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;button type="button" data-modal-trigger="consultation-modal" class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white rounded-full px-6 py-3 bg-blue-500 hover:bg-blue-600 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>15 Perces Konzultáció</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;i data-lucide="rocket" class="h-4 w-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Pricing Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="arazas" class="py-16 sm:py-24 scroll-mt-24"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-7xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative overflow-hidden p-4 sm:p-12 lg:p-16 bg-neutral-950/70 backdrop-blur-xl border-white/10 border rounded-3xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute -bottom-1/2 -left-1/2 w-[800px] h-[800px] bg-blue-800/20 rounded-full blur-3xl opacity-60"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-center mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="sm:text-6xl text-4xl tracking-tight font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-100 via-neutral-200 to-neutral-400/90 mb-6 opacity-0 translate-y-8 blur-sm pb-2" style="animation: slideInBlur 1s ease-out 0.5s forwards;"&gt;Válassza ki a számára &lt;span class="italic font-['Playfair_Display']"&gt;tökéletes&lt;/span&gt; megoldást&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="max-w-3xl text-lg text-neutral-400 font-geist mx-auto"&gt;Nem óradíjat vagy funkciókat árazunk, hanem eredményt és felelősséget. A csomagok célja, hogy a befektetés ne költség, hanem egyértelműen megtérülő profitcentrum legyen.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-slide-up"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex flex-col border-white/10 border rounded-2xl p-8 bg-neutral-900/50 backdrop-blur-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="text-2xl font-medium text-white tracking-tight font-geist"&gt;Lunar Start &lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-sm text-neutral-400 font-geist mt-2"&gt;Profi szoftver és weboldal a vállalkozásának.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="my-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm text-neutral-300 font-geist"&gt;Egyszeri beállítási díj: &lt;span class="text-2xl font-semibold text-white font-geist"&gt;250.000 Ft&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm font-geist text-neutral-300 mt-2"&gt;Havidíj: &lt;span class="text-2xl font-semibold text-white font-geist"&gt;50.000 Ft&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="space-y-3 text-sm flex-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Lunar Szoftver beállítása&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Weboldal&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;AI Chatbot&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;CRM &amp;amp; Pipeline&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Munkafolyamat-automatizálás&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Technikai Támogatás &amp;amp; Karbantartás&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3 text-neutral-500"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"&gt;&lt;line x1="18" y1="6" x2="6" y2="18"&gt;&lt;/line&gt;&lt;line x1="6" y1="6" x2="18" y2="18"&gt;&lt;/line&gt;&lt;/svg&gt;Hirdetéskezelés &amp;amp; SEO&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3 text-neutral-500"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"&gt;&lt;line x1="18" y1="6" x2="6" y2="18"&gt;&lt;/line&gt;&lt;line x1="6" y1="6" x2="18" y2="18"&gt;&lt;/line&gt;&lt;/svg&gt;Havi Stratégiai Konzultáció&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="mt-8 p-4 rounded-lg bg-blue-500/10 border border-blue-500/30"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-blue-400 flex-shrink-0"&gt;&lt;path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h4 class="font-semibold text-white"&gt;Eredményalapú Indítás Garancia&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm text-neutral-400 mt-2 pl-9"&gt;Az első havi díjat csak akkor számlázzuk ki, ha a rendszer már bizonyítottan leadeket hozott Önnek.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button type="button" data-modal-trigger="consultation-modal" class="block w-full text-center transition-colors text-sm font-medium font-geist border rounded-full px-6 py-3 hover:bg-white/10 text-neutral-100 bg-white/5 border-white/10 mt-8"&gt;Konzultációt kérek&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="relative rounded-2xl border-2 border-blue-500 p-8 flex flex-col bg-neutral-900/50 backdrop-blur-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-sm font-semibold text-white bg-blue-500 rounded-full pt-1 pr-4 pb-1 pl-4"&gt;Ajánljuk&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="text-2xl font-medium text-white tracking-tight font-geist"&gt;Lunar Scale&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="mt-2 text-sm font-geist text-neutral-400"&gt;Kulcsrakész megoldás az ügyfélszerzésre.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="my-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm font-geist text-neutral-300"&gt;Egyszeri beállítási díj: &lt;span class="text-2xl font-semibold text-white font-geist"&gt;250.000 Ft&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm font-geist text-neutral-300 mt-2"&gt;Havidíj: &lt;span class="text-2xl font-semibold text-white font-geist"&gt;200.000 Ft&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="space-y-3 text-sm flex-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Lunar Szoftver beállítása&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Weboldal&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;AI Chatbot&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;CRM &amp;amp; Pipeline&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Munkafolyamat-automatizálás&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Technikai Támogatás &amp;amp; Karbantartás&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Hirdetéskezelés &amp;amp; SEO&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li class="flex items-center gap-3"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400"&gt;&lt;path d="M20 6 9 17l-5-5"&gt;&lt;/path&gt;&lt;/svg&gt;Havi Stratégiai Konzultáció&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="mt-8 p-4 rounded-lg bg-blue-500/10 border border-blue-500/30"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-blue-400 flex-shrink-0"&gt;&lt;path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h4 class="font-semibold text-white"&gt;100% Eredménygarancia&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm text-neutral-400 mt-2 pl-9"&gt;Ha nem érjük el a közösen rögzített célokat, visszatérítjük a havidíjat és addig dolgozunk díjmentesen, amíg el nem érjük.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                                </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button type="button" data-modal-trigger="consultation-modal" class="block w-full text-center transition-colors text-sm font-semibold text-white bg-blue-500 rounded-full mt-8 py-3 px-6 hover:bg-blue-600"&gt;Konzultációt kérek&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- FAQ Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="gyik" class="py-16 sm:py-24 scroll-mt-24"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-7xl mr-auto ml-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div class="animate-slide-up text-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="sm:text-5xl lg:text-6xl text-4xl font-light text-white tracking-tighter mb-4"&gt;Kérdése van?&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-2xl text-neutral-400 mx-auto"&gt;Itt megtalálja a válaszokat.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="faq-component-wrapper animate-slide-up mx-auto w-full max-w-3xl rounded-2xl p-4 md:p-6" style="background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mb-4 text-sm text-neutral-400"&gt;Gyakran ismételt kérdések&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- FAQ items will be dynamically injected here by JavaScript --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="faq-accordion-root" class="space-y-2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mt-20 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="sm:text-6xl text-4xl tracking-tight font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-100 via-neutral-200 to-neutral-400/90 mb-6 opacity-0 translate-y-8 blur-sm pb-2" style="animation: slideInBlur 1s ease-out 0.5s forwards;"&gt;Készen áll arra, hogy &lt;span class="italic font-['Playfair_Display']"&gt;átalakítsa&lt;/span&gt; vállalkozása működését?&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-2xl mx-auto mt-4 text-neutral-400"&gt;Azért vagyunk itt, hogy segítsük vállalkozását. Lépjen kapcsolatba velünk, és a lehető leghamarabb visszajelzünk.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mt-8 flex flex-col items-center justify-center gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="button" data-modal-trigger="consultation-modal" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 text-base font-semibold text-white rounded-full px-8 py-4 bg-blue-500 hover:bg-blue-600 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Foglaljon ingyenes Konzultációt</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="mailto:support@lunaragency.hu" class="inline-flex items-center justify-center gap-2 text-sm text-neutral-400 transition-colors hover:text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="mail" class="h-4 w-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span&gt;support@lunaragency.hu&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Footer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer id="contact" class="py-10 scroll-mt-24"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-7xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative overflow-hidden sm:px-12 p-8 bg-gradient-to-b from-[#454545]/10 to-black border-white/10 border rounded-3xl backdrop-blur-xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute top-0 -right-1/2 w-[800px] h-[800px] bg-blue-900/15 rounded-full blur-3xl opacity-50"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col md:flex-row items-center justify-between gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="text-lg font-medium tracking-tight font-geist"&gt;lunar agency&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="#" class="transition-colors font-geist hover:text-neutral-100"&gt;Adatvédelem&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="mailto:support@lunaragency.hu" class="transition-colors font-geist hover:text-neutral-100"&gt;support@lunaragency.hu&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;!-- ENHANCEMENT: Removed hardcoded year to prevent showing wrong info before JS loads. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="font-geist text-neutral-500"&gt;© &lt;span id="current-year"&gt;&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Consultation Modal --&gt;</p>
+<p class="p1">&lt;div id="consultation-modal" class="fixed inset-0 z-50 flex items-start justify-center bg-black bg-opacity-70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 overflow-y-auto py-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="modal-panel" class="relative bg-neutral-900 border border-white/10 rounded-2xl w-full max-w-3xl m-4 p-8 shadow-2xl transform transition-all duration-300 scale-95 opacity-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ENHANCEMENT: Added aria-label for better accessibility. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="close-modal-btn" aria-label="Bezárás" class="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"&gt;&lt;line x1="18" y1="6" x2="6" y2="18"&gt;&lt;/line&gt;&lt;line x1="6" y1="6" x2="18" y2="18"&gt;&lt;/line&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- This container will hold the calendar iframe --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="modal-content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="form-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-geist font-semibold text-white mb-2"&gt;Időpontfoglalás&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-neutral-400 mb-6"&gt;Válasszon egy Önnek megfelelő időpontot egy ingyenes, 15 perces konzultációra.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- GoHighLevel Calendar Embed Starts --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- ENHANCEMENT: Added lazy loading to the iframe for better initial page performance. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;iframe src="https://api.leadconnectorhq.com/widget/booking/kZMZ6vGYyrjBY95fPKLd?v=2" style="width: 100%; border:none; min-height: 650px;" loading="lazy" id="kZMZ6vGYyrjBY95fPKLd_1757767813947"&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- GoHighLevel Calendar Embed Ends --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ENHANCEMENT: Added a "Back to Top" button for better user experience on long pages. --&gt;</p>
+<p class="p1">&lt;button id="back-to-top" title="Vissza a tetejére" class="fixed bottom-5 right-5 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition-all duration-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"&gt;&lt;path d="M12 19V5"/&gt;&lt;path d="m5 12 7-7 7 7"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="sr-only"&gt;Vissza a tetejére&lt;/span&gt;</p>
+<p class="p1">&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- OPTIMIZATION: Defer loading of non-critical scripts (animations, form embeds) to prevent render-blocking. --&gt;</p>
+<p class="p1">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" defer&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">// --- Gradual Blur Class (Refactored to remove math.js dependency) ---</p>
+<p class="p1">class GradualBlur {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>constructor(targetElement, config = {}) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.containerRef = null;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.isHovered = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const DEFAULT_CONFIG = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: 'bottom',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>strength: 2,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: '6rem',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>divCount: 5,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>exponential: false,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>zIndex: 1000,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>curve: 'linear',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>target: 'parent',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>className: '',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style: {}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.config = { ...DEFAULT_CONFIG, ...config };</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.targetElement = targetElement;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.CURVE_FUNCTIONS = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>linear: p =&gt; p,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bezier: p =&gt; p * p * (3 - 2 * p),</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'ease-in': p =&gt; p * p,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'ease-out': p =&gt; 1 - Math.pow(1 - p, 2),</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'ease-in-out': p =&gt; (p &lt; 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.init();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>getGradientDirection(position) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const directions = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 'to top',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 'to bottom',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 'to left',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 'to right'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return directions[position] || 'to bottom';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>createBlurDivs() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const divs = document.createDocumentFragment();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const increment = 100 / this.config.divCount;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const currentStrength = this.isHovered &amp;&amp; this.config.hoverIntensity ? this.config.strength * this.config.hoverIntensity : this.config.strength;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const curveFunc = this.CURVE_FUNCTIONS[this.config.curve] || this.CURVE_FUNCTIONS.linear;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (let i = 1; i &lt;= this.config.divCount; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let progress = i / this.config.divCount;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>progress = curveFunc(progress);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let blurValue;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (this.config.exponential) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Replaced math.pow with Math.pow</p>
+<p class="p1"><span class="Apple-converted-space">                </span>blurValue = Math.pow(2, progress * 4) * 0.0625 * currentStrength;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>blurValue = 0.0625 * (progress * this.config.divCount + 1) * currentStrength;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Replaced math.round with Math.round</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const p1 = Math.round((increment * i - increment) * 10) / 10;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const p2 = Math.round(increment * i * 10) / 10;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const p3 = Math.round((increment * i + increment) * 10) / 10;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const p4 = Math.round((increment * i + increment * 2) * 10) / 10;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let gradient = `transparent ${p1}%, black ${p2}%`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (p3 &lt;= 100) gradient += `, black ${p3}%`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (p4 &lt;= 100) gradient += `, transparent ${p4}%`;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const direction = this.getGradientDirection(this.config.position);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.style.position = 'absolute';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.style.inset = '0';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.style.maskImage = `linear-gradient(${direction}, ${gradient})`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.style.webkitMaskImage = `linear-gradient(${direction}, ${gradient})`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.style.backdropFilter = `blur(${blurValue.toFixed(3)}rem)`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.style.webkitBackdropFilter = `blur(${blurValue.toFixed(3)}rem)`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.style.opacity = this.config.opacity;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>divs.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return divs;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>applyContainerStyles() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const { position, target, hoverIntensity, zIndex, style, height, width } = this.config;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const isVertical = ['top', 'bottom'].includes(position);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const isHorizontal = ['left', 'right'].includes(position);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const isPageTarget = target === 'page';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const baseStyle = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: isPageTarget ? 'fixed' : 'absolute',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pointerEvents: hoverIntensity ? 'auto' : 'none',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>zIndex: isPageTarget ? 30 : zIndex, // Modified z-index for page target to be below header/modal</p>
+<p class="p1"><span class="Apple-converted-space">            </span>...style</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Object.assign(this.containerRef.style, baseStyle);</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (isVertical) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style.height = height;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style.width = width || '100%';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style[position] = '0';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style.left = '0';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style.right = '0';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else if (isHorizontal) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style.width = width || height;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style.height = '100%';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style[position] = '0';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style.top = '0';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.style.bottom = '0';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>init() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.containerRef = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.containerRef.className = `gradual-blur ${this.config.className}`;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.applyContainerStyles();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const innerDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>innerDiv.className = 'gradual-blur-inner';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>innerDiv.style.position = 'relative';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>innerDiv.style.width = '100%';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>innerDiv.style.height = '100%';</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>innerDiv.appendChild(this.createBlurDivs());</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.containerRef.appendChild(innerDiv);</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (this.config.hoverIntensity) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>this.containerRef.addEventListener('mouseenter', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.isHovered = true;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>innerDiv.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>innerDiv.appendChild(this.createBlurDivs());</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">             </span>this.containerRef.addEventListener('mouseleave', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.isHovered = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>innerDiv.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>innerDiv.appendChild(this.createBlurDivs());</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.targetElement.appendChild(this.containerRef);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">// --- Global Modal Logic ---</p>
+<p class="p1">const openModal = (modal) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!modal) return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const modalPanel = modal.querySelector('#modal-panel');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>modal.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.body.classList.add('overflow-hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gsap.to(modal, { opacity: 1, duration: 0.3 });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gsap.to(modalPanel, { scale: 1, opacity: 1, duration: 0.3, delay: 0.1 });</p>
+<p class="p1">};</p>
+<p class="p1">const closeModal = (modal) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!modal) return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const modalPanel = modal.querySelector('#modal-panel');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gsap.to(modalPanel, { scale: 0.95, opacity: 0, duration: 0.2 });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gsap.to(modal, {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>opacity: 0,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>duration: 0.2,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>delay: 0.1,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>onComplete: () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modal.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.classList.remove('overflow-hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const problematicSection = document.getElementById('szolgaltatasok');</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Instance for the bottom of the page</p>
+<p class="p1"><span class="Apple-converted-space">    </span>new GradualBlur(document.body, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>target: "page",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>position: "bottom",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height: "4rem",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>strength: 2,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>divCount: 5,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>curve: "bezier",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>exponential: true,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>zIndex: 30,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>className: 'page-bottom-blur' // Add a unique class for targeting</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- Set Current Year in Footer ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const yearEl = document.getElementById('current-year');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (yearEl) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>yearEl.textContent = new Date().getFullYear();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- Mobile Menu Logic ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const menuBtn = document.getElementById('menu-btn');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const mobileMenu = document.getElementById('mobile-menu');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const menuOpenIcon = document.getElementById('menu-open-icon');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const menuCloseIcon = document.getElementById('menu-close-icon');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const closeMobileMenu = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mobileMenu.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>menuOpenIcon.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>menuCloseIcon.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.classList.remove('overflow-hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>menuBtn.setAttribute('aria-expanded', 'false');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (menuBtn) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>menuBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isOpen = !mobileMenu.classList.contains('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (isOpen) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeMobileMenu();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>mobileMenu.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>menuOpenIcon.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>menuCloseIcon.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.body.classList.add('overflow-hidden');<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>menuBtn.setAttribute('aria-expanded', 'true');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (mobileMenu) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mobileMenu.querySelectorAll('a, button').forEach(link =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>link.addEventListener('click', closeMobileMenu);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- Modal Event Listeners ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll('[data-modal-trigger]').forEach(trigger =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>trigger.addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modalId = trigger.dataset.modalTrigger;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modal = document.getElementById(modalId);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>openModal(modal);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const consultationModal = document.getElementById('consultation-modal');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(consultationModal) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>consultationModal.addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (e.target.id === 'consultation-modal') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeModal(consultationModal);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const closeModalBtn = consultationModal.querySelector('#close-modal-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (closeModalBtn) closeModalBtn.addEventListener('click', () =&gt; closeModal(consultationModal));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.addEventListener('keydown', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (e.key === 'Escape') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (consultationModal &amp;&amp; !consultationModal.classList.contains('hidden')) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeModal(consultationModal);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (mobileMenu &amp;&amp; !mobileMenu.classList.contains('hidden')) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeMobileMenu();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- Back to Top Button Logic ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const backToTopButton = document.getElementById('back-to-top');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (backToTopButton) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('scroll', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (window.scrollY &gt; 400) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>backToTopButton.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>backToTopButton.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}, { passive: true });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToTopButton.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.scrollTo({ top: 0, behavior: 'smooth' });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- FAQ Section Logic ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (typeof gsap === 'undefined') {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>console.error("GSAP library not found. Accordion animations will not work.");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const faqData = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ id: 1, question: "Ez egy szoftver vagy egy szolgáltatás?", answer: "Ez egy all-in-one marketing rendszer, amit a vállalkozására szabunk. Nem csak egy szoftvert kap, hanem automatikusan beállított eszközöket (CRM, időpontfoglaló, weboldal, funnel, stb.), és betanítást és támogatást is mellé.", icon: "🤖" },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ id: 2, question: "Miben különbözik ez a rendszer más szoftverektől?", answer: "Ez nem csak egy szoftver – hanem 33 szoftver ereje egy rendszerbe integrálva. Nem kell külön fizetnie több százezreket-milliókat weboldalért, időpontfoglalóért, e-mail küldőért, CRM-ért – itt minden egy helyen van, automatikusan beállítva.", icon: "✨" },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ id: 3, question: "Mi van, ha van már weboldalam?", answer: "Semmi gond! A rendszerünket tudjuk integrálni a meglévő weboldalába is, de ha egy új, modernebb és letisztultabb megjelenésre vágyik, akkor szívesen elkészítjük az új weboldalát a rendszereinken belül.", icon: "🌐" },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ id: 4, question: "Nem vagyok biztos benne, hogy nekem ez tényleg működni fog...", answer: "Ez teljesen érthető, mivel ez nem egy “mindenkinek ugyanaz” megoldás. Foglaljon egy ingyenes konzultációt, mely során felderítjük, mit érdemes automatizálni, kik az ideális ügyfelek, és hogyan takarít meg az AI rengeteg értékes időt.", icon: "🤔" },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ id: 5, question: "Mennyi idő múlva lesz ebből ügyfél?", answer: "Ez mindig iparágfüggő, de a rendszer célja, hogy automatizálja a leadgenerálást és kapcsolatépítést, így gyorsabban és hatékonyabban konvertál, mint kézi módszerrel. Amint a lehető legtöbb ügyfélre vágyik, erre is van megoldás: kérheti tőlünk a Lunar Scale (hírdetéskezelés) csomagunkat, így garantáltan eljut az üzenete a célközönségéhez.", icon: "🎯" },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ id: 6, question: "Mi történik a hirdetésekből jövő érdeklődőkkel?", answer: "A rendszerünk automatikusan begyűjti őket, és azonnal elkezdi az utánkövetést: e-mail, SMS, – mindent automatizálunk, hogy ne vesszen el egyetlen lead sem.", icon: "🧲" }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const accordionRoot = document.getElementById('faq-accordion-root');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (accordionRoot) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>accordionRoot.innerHTML = faqData.map(item =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="faq-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="faq-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="faq-trigger flex w-full items-center justify-start gap-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="faq-trigger-inner relative flex-grow flex items-center space-x-2 rounded-xl bg-neutral-800 p-3 hover:bg-neutral-700 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="faq-icon-emoji absolute -bottom-2 -left-1 text-2xl" style="transform: rotate(-10deg);"&gt;${item.icon}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="font-medium text-neutral-200 text-left pl-8"&gt;${item.question}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="faq-icon-container text-neutral-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                           </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron w-6 h-6"&gt;&lt;polyline points="6 9 12 15 18 9"&gt;&lt;/polyline&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="faq-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="faq-content-inner mt-1 p-3 flex justify-end"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="relative max-w-full md:max-w-md rounded-2xl bg-blue-600 px-4 py-3 text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${item.answer}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="absolute -bottom-2 right-4 h-0 w-0 border-l-[10px] border-t-[10px] border-l-transparent border-t-blue-600" style="transform: rotate(-20deg);"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>`).join('');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const allItems = accordionRoot.querySelectorAll('.faq-item');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>allItems.forEach(item =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const trigger = item.querySelector('.faq-trigger');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const content = item.querySelector('.faq-content');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const contentInner = item.querySelector('.faq-content-inner');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!trigger || !content || !contentInner) return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>trigger.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const isOpen = item.classList.contains('is-open');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>allItems.forEach(otherItem =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (otherItem !== item &amp;&amp; otherItem.classList.contains('is-open')) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>otherItem.classList.remove('is-open');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const oc = otherItem.querySelector('.faq-content');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (oc) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>gsap.to(oc, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>item.classList.toggle('is-open');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (isOpen) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>gsap.to(content, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>gsap.set(content, { visibility: 'visible' });</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>gsap.to(content, { height: contentInner.offsetHeight, opacity: 1, duration: 0.4, ease: 'power3.out' });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- Features: Lucide + sequence reveal (TILT EFFECT REMOVED FOR PERFORMANCE) ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (window.lucide &amp;&amp; typeof window.lucide.createIcons === 'function') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.warn('Lucide script not yet loaded. Icons may not appear immediately.');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} catch (e) { console.error('Error creating Lucide icons:', e); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const featuresRoot = document.querySelector('#szolgaltatasok');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (featuresRoot) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const revealEls = [...featuresRoot.querySelectorAll('[data-reveal]')];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const io = new IntersectionObserver((entries) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>entries.forEach(entry =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (entry.isIntersecting) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const el = entry.target;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const idx = Number(el.getAttribute('data-reveal-index') || 0);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const delay = 120 + idx * 100; // ms</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>requestAnimationFrame(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>el.style.transition = 'opacity .7s ease, transform .7s ease, filter .7s ease';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>el.style.transitionDelay = `${delay}ms`;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>el.style.opacity = '1';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>el.style.transform = 'translateY(0) scale(1)';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>el.style.filter = 'blur(0)';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>io.unobserve(el);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}, { threshold: 0.15 });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>revealEls.forEach(el =&gt; io.observe(el));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+<p class="p2"><br></p>
+</body>
+</html>
