@@ -4,31 +4,81 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lunar Agency - AI & Automatizáció</title>
+    <meta name="description" content="Lunar Agency - AI és automatizációs megoldások vállalatoknak. Mesterséges intelligencia, folyamatoptimalizálás és digitális transzformáció szakértői.">
     
-    <!-- PERFORMANCE: Preconnect to critical third-party origins to speed up DNS lookup, TCP handshake, and TLS negotiation. This can significantly reduce latency for fetching resources. -->
+    <!-- MOBILE OPTIMIZATION: Additional performance hints -->
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- PERFORMANCE: Preconnect to critical third-party origins to speed up DNS lookup, TCP handshake, and TLS negotiation. -->
     <link rel="preconnect" href="https://storage.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-    <!-- OPTIMIZATION: Preload the LCP (Largest Contentful Paint) image to load it sooner. -->
-    <link rel="preload" fetchpriority="high" as="image" href="https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png" type="image/png">
+    <!-- OPTIMIZATION: Preload the LCP (Largest Contentful Paint) image in WebP format for better compression -->
+    <link rel="preload" fetchpriority="high" as="image" href="https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68cfa4fb074b8d4e98dba87f.webp" type="image/webp">
     
-    <!-- OPTIMIZATION: Load Google Fonts CSS asynchronously to prevent render-blocking. -->
+    <!-- OPTIMIZATION: Load Google Fonts CSS asynchronously to prevent render-blocking -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"></noscript>
     
-    <!-- PERFORMANCE NOTE: Tailwind CSS via CDN uses a Just-in-Time (JIT) compiler script. While convenient, this script is flagged as render-blocking because it must run before the page is fully styled. For optimal production performance, using a build process to generate a static, minified CSS file is the recommended approach. -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- PERFORMANCE: Using locally built Tailwind CSS for optimal performance -->
+    <link href="./dist/tailwind.css" rel="stylesheet">
+    
+    <!-- MOBILE OPTIMIZATION: Critical CSS for above-the-fold content -->
+    <style>
+        /* Critical styles for immediate rendering */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0a0a0a; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .font-geist { font-family: 'Geist Sans', sans-serif; }
+        /* Ensure background doesn't cause layout shift */
+        .aura-background-component { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: -10; 
+        }
+        /* Critical header styles */
+        header { position: relative; z-index: 10; }
+        .max-w-7xl { max-width: 80rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+        @media (min-width: 640px) { .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; } }
+        @media (min-width: 1024px) { .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; } }
+    </style>
     
     <!-- ENHANCEMENT: Removed math.js dependency as native Math object is sufficient. -->
     
-    <!-- OPTIMIZATION: Defer loading of non-critical scripts (icons) to prevent render-blocking. -->
+    <!-- OPTIMIZATION: Defer loading of non-critical scripts to prevent render-blocking -->
     <script src="https://unpkg.com/lucide@latest" defer></script>
+    
+    <!-- PERFORMANCE: Defer third-party scripts to reduce main thread blocking -->
+    <script>
+        // Defer third-party scripts until after page load
+        window.addEventListener('load', function() {
+            // Load GSAP after page load
+            const gsapScript = document.createElement('script');
+            gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+            gsapScript.async = true;
+            document.head.appendChild(gsapScript);
+            
+            // Load Unicorn Studio script after page load
+            const unicornScript = document.createElement('script');
+            unicornScript.src = 'https://cdn.jsdelivr.net/npm/unicorn-studio@latest/dist/unicornStudio.umd.js';
+            unicornScript.async = true;
+            document.head.appendChild(unicornScript);
+        });
+    </script>
     
     <style>
         body {
@@ -55,6 +105,27 @@
             animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
             scroll-behavior: auto !important;
+          }
+        }
+        
+        /* MOBILE OPTIMIZATION: Reduce animations on mobile for better performance */
+        @media (max-width: 768px) {
+          .animate-letter-slide-in { 
+            animation-duration: 0.4s !important; 
+          }
+          .animate-slide-up { 
+            animation-duration: 0.3s !important; 
+          }
+          /* Reduce blur effects on mobile */
+          .blur-sm { filter: blur(2px) !important; }
+          .blur-md { filter: blur(4px) !important; }
+        }
+        
+        /* MOBILE OPTIMIZATION: Optimize touch interactions */
+        @media (hover: none) and (pointer: coarse) {
+          button, a, [role="button"] {
+            min-height: 44px;
+            min-width: 44px;
           }
         }
         .animate-letter-slide-in { animation: letterSlideIn 0.8s ease-out forwards; }
@@ -101,7 +172,7 @@
           "@type": "Organization",
           "name": "Lunar Agency",
           "url": "https://www.lunaragency.hu/",
-          "logo": "https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png",
+          "logo": "https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68cfa4fb074b8d4e98dba87f.webp",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "support@lunaragency.hu",
@@ -208,27 +279,42 @@
 <div class="aura-background-component top-0 w-full h-screen -z-10 absolute"><div class="aura-background-component top-0 w-full -z-10 absolute h-full">
   <div data-us-project="2IcJ39Gx68KiPG1qlgj8" class="absolute w-full h-full left-0 top-0 -z-10"></div>
   <script type="text/javascript">
-    (function(){
-        if(window.UnicornStudio) return;
-        window.UnicornStudio = {isInitialized: false};
-        var script = document.createElement("script");
-        script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js";
-        script.onload = function() {
-            if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
-                try {
-                    var result = window.UnicornStudio.init();
-                    if (result && typeof result.catch === 'function') {
-                        result.catch(function(error) { console.error("Unicorn Studio promise was rejected:", error); });
+    // MOBILE OPTIMIZATION: Smart loading of Unicorn Studio background
+    // Load after critical content but before user interaction
+    let unicornLoaded = false;
+    
+    function loadUnicornStudio() {
+        if (unicornLoaded || window.UnicornStudio) return;
+        unicornLoaded = true;
+        
+        (function(){
+            window.UnicornStudio = {isInitialized: false};
+            var script = document.createElement("script");
+            script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js";
+            script.async = true;
+            script.onload = function() {
+                if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
+                    try {
+                        var result = window.UnicornStudio.init();
+                        if (result && typeof result.catch === 'function') {
+                            result.catch(function(error) { console.error("Unicorn Studio promise was rejected:", error); });
+                        }
+                        window.UnicornStudio.isInitialized = true;
+                    } catch (error) {
+                        console.error("Error initializing Unicorn Studio:", error);
                     }
-                    window.UnicornStudio.isInitialized = true;
-                } catch (error) {
-                    console.error("Error initializing Unicorn Studio:", error);
                 }
-            }
-        };
-        script.onerror = function() { console.error("Failed to load Unicorn Studio script."); };
-        (document.head || document.body).appendChild(script);
-    })();
+            };
+            script.onerror = function() { console.error("Failed to load Unicorn Studio script."); };
+            (document.head || document.body).appendChild(script);
+        })();
+    }
+    
+    // Load on page load or user interaction (whichever comes first)
+    window.addEventListener('load', loadUnicornStudio);
+    document.addEventListener('touchstart', loadUnicornStudio, { once: true });
+    document.addEventListener('mousemove', loadUnicornStudio, { once: true });
+    document.addEventListener('scroll', loadUnicornStudio, { once: true });
   </script>
 </div></div>
     
@@ -273,7 +359,7 @@
         <section class="relative overflow-hidden sm:py-10 py-10">
             <div class="max-w-7xl mx-auto">
                 <!-- PERFORMANCE NOTE: The background image for this hero section is a critical element for the LCP. The current image is quite large (~1MB). For a significant performance improvement, consider compressing this image further or serving it in a next-gen format like WebP or AVIF. -->
-                <div class="relative min-h-[520px] sm:minh-[640px] lg:min-h-[720px] flex flex-col bg-center p-4 sm:p-12 lg:p-20 bg-neutral-950 bg-cover border-white/10 border rounded-3xl" style="background-image: url('https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png');">
+                <div class="relative min-h-[520px] sm:minh-[640px] lg:min-h-[720px] flex flex-col bg-center p-4 sm:p-12 lg:p-20 bg-neutral-950 bg-cover border-white/10 border rounded-3xl" style="background-image: url('https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68cfa4fb074b8d4e98dba87f.webp');">
                     <header class="mb-12 sm:mb-16">
                         <h1 class="block sm:text-8xl md:text-9xl lg:text-[10vw] text-6xl font-semibold" style="letter-spacing: -0.075em;">
                             <span class="inline-block animate-letter-slide-in text-neutral-50 font-geist" style="animation-delay: 0s;">L</span><span class="inline-block animate-letter-slide-in text-neutral-200 font-geist" style="animation-delay: 0.1s;">U</span><span class="inline-block animate-letter-slide-in text-neutral-400 font-geist" style="animation-delay: 0.2s;">N</span><span class="inline-block animate-letter-slide-in text-neutral-500 font-geist" style="animation-delay: 0.3s;">A</span><span class="inline-block animate-letter-slide-in text-neutral-600 font-geist" style="animation-delay: 0.4s;">R</span>
@@ -561,7 +647,6 @@
 </div>
 
 <!-- OPTIMIZATION: Defer loading of non-critical scripts (animations, form embeds) to prevent render-blocking. -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" defer></script>
 
 <script>
