@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lunar Agency - AI & Automatizáció</title>
+    <title>Lunar Agency - AI & Automatizáció a Növekedésért</title>
+    <!-- SEO FIX: Added a meta description to improve search engine visibility. -->
+    <meta name="description" content="Növelje vállalkozása hatékonyságát AI chatbotokkal és marketing automatizációval. Szerezzen több ügyfelet kevesebb munkával. Ismerje meg a Lunar Agency megoldásait!">
     
-    <!-- PERFORMANCE: Preconnect to critical third-party origins to speed up DNS lookup, TCP handshake, and TLS negotiation. This can significantly reduce latency for fetching resources. -->
+    <!-- PERFORMANCE: Preconnect to critical third-party origins. -->
     <link rel="preconnect" href="https://storage.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
@@ -22,10 +23,8 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"></noscript>
     
-    <!-- PERFORMANCE NOTE: Tailwind CSS via CDN uses a Just-in-Time (JIT) compiler script. While convenient, this script is flagged as render-blocking because it must run before the page is fully styled. For optimal production performance, using a build process to generate a static, minified CSS file is the recommended approach. -->
+    <!-- Reverted to Tailwind CDN Script for this environment. A static CSS file requires a build step. -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- ENHANCEMENT: Removed math.js dependency as native Math object is sufficient. -->
     
     <!-- OPTIMIZATION: Defer loading of non-critical scripts (icons) to prevent render-blocking. -->
     <script src="https://unpkg.com/lucide@latest" defer></script>
@@ -46,11 +45,9 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Add prefers-reduced-motion media query to disable animations */
+        /* Accessibility: Reduce motion */
         @media (prefers-reduced-motion: reduce) {
-          *,
-          *::before,
-          *::after {
+          *, *::before, *::after {
             animation-duration: 0.01ms !important;
             animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
@@ -60,39 +57,17 @@
         .animate-letter-slide-in { animation: letterSlideIn 0.8s ease-out forwards; }
         .animate-slide-up { animation: slideUp 0.6s ease-out both; }
         /* --- FAQ STYLES --- */
-        .faq-content {
-            height: 0;
-            opacity: 0;
-            overflow: hidden;
-            visibility: hidden;
-        }
-        .faq-item.is-open .faq-trigger-inner {
-            background-color: #374151; /* gray-700 */
-        }
-        .faq-icon-emoji {
-            font-size: 1.4rem;
-            line-height: 1;
-        }
-        .faq-chevron {
-            transition: transform 0.3s ease-in-out;
-        }
-        .faq-item.is-open .faq-chevron {
-            transform: rotate(180deg);
-        }
+        .faq-content { height: 0; opacity: 0; overflow: hidden; visibility: hidden; }
+        .faq-item.is-open .faq-trigger-inner { background-color: #374151; }
+        .faq-icon-emoji { font-size: 1.4rem; line-height: 1; }
+        .faq-chevron { transition: transform 0.3s ease-in-out; }
+        .faq-item.is-open .faq-chevron { transform: rotate(180deg); }
         @keyframes slideInBlur {
-            from {
-                opacity: 0;
-                transform: translateY(32px); /* translate-y-8 */
-                filter: blur(4px); /* blur-sm */
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0px);
-                filter: blur(0px);
-            }
+            from { opacity: 0; transform: translateY(32px); filter: blur(4px); }
+            to { opacity: 1; transform: translateY(0px); filter: blur(0px); }
         }
     </style>
-     <!-- SEO: ADDED JSON-LD STRUCTURED DATA (SCHEMA MARKUP) -->
+     <!-- SEO: JSON-LD STRUCTURED DATA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -102,101 +77,35 @@
           "name": "Lunar Agency",
           "url": "https://www.lunaragency.hu/",
           "logo": "https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "support@lunaragency.hu",
-            "contactType": "customer support"
-          },
+          "contactPoint": { "@type": "ContactPoint", "email": "support@lunaragency.hu", "contactType": "customer support" },
           "description": "AI és automatizációs marketing ügynökség magyar vállalkozások növekedéséért. Szolgáltatásaink: AI chatbotok, munkafolyamat-automatizálás, CRM és ügyfélszerző weboldalak."
         },
         {
           "@type": "WebSite",
           "url": "https://www.lunaragency.hu/",
           "name": "Lunar Agency",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Lunar Agency"
-          }
+          "publisher": { "@type": "Organization", "name": "Lunar Agency" }
         },
         {
           "@type": "Service",
           "serviceType": "Marketing Automatizálás",
           "name": "AI Chatbot és Automatizációs Rendszer",
           "description": "Kulcsrakész AI chatbot és marketing automatizációs rendszer, amely 24/7-ben dolgozik a vállalkozásáért. Időpontot foglal, minősíti az érdeklődőket és növeli a konverziót.",
-          "provider": {
-            "@type": "Organization",
-            "name": "Lunar Agency"
-          },
+          "provider": { "@type": "Organization", "name": "Lunar Agency" },
           "offers": [
-            {
-              "@type": "Offer",
-              "name": "Lunar Start Csomag",
-              "price": "50000",
-              "priceCurrency": "HUF",
-              "description": "Profi szoftver és weboldal a vállalkozásának, AI Chatbottal, CRM-mel és munkafolyamat-automatizálással. Egyszeri beállítási díj: 250.000 Ft.",
-              "url": "https://www.lunaragency.hu/#arazas"
-            },
-            {
-              "@type": "Offer",
-              "name": "Lunar Scale Csomag",
-              "price": "200000",
-              "priceCurrency": "HUF",
-              "description": "Kulcsrakész megoldás az ügyfélszerzésre, amely tartalmazza a Start csomag minden elemét, kiegészítve hirdetéskezeléssel, SEO-val és havi stratégiai konzultációval. Egyszeri beállítási díj: 250.000 Ft.",
-              "url": "https://www.lunaragency.hu/#arazas"
-            }
+            { "@type": "Offer", "name": "Lunar Start Csomag", "price": "50000", "priceCurrency": "HUF", "description": "Profi szoftver és weboldal a vállalkozásának, AI Chatbottal, CRM-mel és munkafolyamat-automatizálással. Egyszeri beállítási díj: 250.000 Ft.", "url": "https://www.lunaragency.hu/#arazas" },
+            { "@type": "Offer", "name": "Lunar Scale Csomag", "price": "200000", "priceCurrency": "HUF", "description": "Kulcsrakész megoldás az ügyfélszerzésre, amely tartalmazza a Start csomag minden elemét, kiegészítve hirdetéskezeléssel, SEO-val és havi stratégiai konzultációval. Egyszeri beállítási díj: 250.000 Ft.", "url": "https://www.lunaragency.hu/#arazas" }
           ]
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Ez egy szoftver vagy egy szolgáltatás?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Ez egy all-in-one marketing rendszer, amit a vállalkozására szabunk. Nem csak egy szoftvert kap, hanem automatikusan beállított eszközöket (CRM, időpontfoglaló, weboldal, funnel, stb.), és betanítást és támogatást is mellé."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Miben különbözik ez a rendszer más szoftverektől?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Ez nem csak egy szoftver – hanem 33 szoftver ereje egy rendszerbe integrálva. Nem kell külön fizetnie több százezreket-milliókat weboldalért, időpontfoglalóért, e-mail küldőért, CRM-ért – itt minden egy helyen van, automatikusan beállítva."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Mi van, ha van már weboldalam?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Semmi gond! A rendszerünket tudjuk integrálni a meglévő weboldalába is, de ha egy új, modernebb és letisztultabb megjelenésre vágyik, akkor szívesen elkészítjük az új weboldalát a rendszereinken belül."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Nem vagyok biztos benne, hogy nekem ez tényleg működni fog...",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Ez teljesen érthető, mivel ez nem egy “mindenkinek ugyanaz” megoldás. Foglaljon egy ingyenes konzultációt, mely során felderítjük, mit érdemes automatizálni, kik az ideális ügyfelek, és hogyan takarít meg az AI rengeteg értékes időt."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Mennyi idő múlva lesz ebből ügyfél?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Ez mindig iparágfüggő, de a rendszer célja, hogy automatizálja a leadgenerálást és kapcsolatépítést, így gyorsabban és hatékonyabban konvertál, mint kézi módszerrel. Amint a lehető legtöbb ügyfélre vágyik, erre is van megoldás: kérheti tőlünk a Lunar Scale (hírdetéskezelés) csomagunkat, így garantáltan eljut az üzenete a célközönségéhez."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Mi történik a hirdetésekből jövő érdeklődőkkel?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A rendszerünk automatikusan begyűjti őket, és azonnal elkezdi az utánkövetést: e-mail, SMS, – mindent automatizálunk, hogy ne vesszen el egyetlen lead sem."
-              }
-            }
+            { "@type": "Question", "name": "Ez egy szoftver vagy egy szolgáltatás?", "acceptedAnswer": { "@type": "Answer", "text": "Ez egy all-in-one marketing rendszer, amit a vállalkozására szabunk. Nem csak egy szoftvert kap, hanem automatikusan beállított eszközöket (CRM, időpontfoglaló, weboldal, funnel, stb.), és betanítást és támogatást is mellé." } },
+            { "@type": "Question", "name": "Miben különbözik ez a rendszer más szoftverektől?", "acceptedAnswer": { "@type": "Answer", "text": "Ez nem csak egy szoftver – hanem 33 szoftver ereje egy rendszerbe integrálva. Nem kell külön fizetnie több százezreket-milliókat weboldalért, időpontfoglalóért, e-mail küldőért, CRM-ért – itt minden egy helyen van, automatikusan beállítva." } },
+            { "@type": "Question", "name": "Mi van, ha van már weboldalam?", "acceptedAnswer": { "@type": "Answer", "text": "Semmi gond! A rendszerünket tudjuk integrálni a meglévő weboldalába is, de ha egy új, modernebb és letisztultabb megjelenésre vágyik, akkor szívesen elkészítjük az új weboldalát a rendszereinken belül." } },
+            { "@type": "Question", "name": "Nem vagyok biztos benne, hogy nekem ez tényleg működni fog...", "acceptedAnswer": { "@type": "Answer", "text": "Ez teljesen érthető, mivel ez nem egy “mindenkinek ugyanaz” megoldás. Foglaljon egy ingyenes konzultációt, mely során felderítjük, mit érdemes automatizálni, kik az ideális ügyfelek, és hogyan takarít meg az AI rengeteg értékes időt." } },
+            { "@type": "Question", "name": "Mennyi idő múlva lesz ebből ügyfél?", "acceptedAnswer": { "@type": "Answer", "text": "Ez mindig iparágfüggő, de a rendszer célja, hogy automatizálja a leadgenerálást és kapcsolatépítést, így gyorsabban és hatékonyabban konvertál, mint kézi módszerrel. Amint a lehető legtöbb ügyfélre vágyik, erre is van megoldás: kérheti tőlünk a Lunar Scale (hírdetéskezelés) csomagunkat, így garantáltan eljut az üzenete a célközönségéhez." } },
+            { "@type": "Question", "name": "Mi történik a hirdetésekből jövő érdeklődőkkel?", "acceptedAnswer": { "@type": "Answer", "text": "A rendszerünk automatikusan begyűjti őket, és azonnal elkezdi az utánkövetést: e-mail, SMS, – mindent automatizálunk, hogy ne vesszen el egyetlen lead sem." } }
           ]
         }
       ]
@@ -205,49 +114,26 @@
 </head>
 <body class="h-full antialiased text-zinc-100 bg-gradient-to-b from-[#000000] to-[#1c1c1c]/20">
 <!-- Background Animation -->
-<div class="aura-background-component top-0 w-full h-screen -z-10 absolute"><div class="aura-background-component top-0 w-full -z-10 absolute h-full">
-  <div data-us-project="2IcJ39Gx68KiPG1qlgj8" class="absolute w-full h-full left-0 top-0 -z-10"></div>
-  <script type="text/javascript">
-    (function(){
-        if(window.UnicornStudio) return;
-        window.UnicornStudio = {isInitialized: false};
-        var script = document.createElement("script");
-        script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js";
-        script.onload = function() {
-            if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
-                try {
-                    var result = window.UnicornStudio.init();
-                    if (result && typeof result.catch === 'function') {
-                        result.catch(function(error) { console.error("Unicorn Studio promise was rejected:", error); });
-                    }
-                    window.UnicornStudio.isInitialized = true;
-                } catch (error) {
-                    console.error("Error initializing Unicorn Studio:", error);
-                }
-            }
-        };
-        script.onerror = function() { console.error("Failed to load Unicorn Studio script."); };
-        (document.head || document.body).appendChild(script);
-    })();
-  </script>
-</div></div>
+<div id="background-animation-wrapper" class="aura-background-component top-0 w-full h-screen -z-10 absolute">
+    <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
+        <div data-us-project="2IcJ39Gx68KiPG1qlgj8" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+    </div>
+</div>
     
 <div class="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
     <!-- Header & Navigation -->
     <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav aria-label="Fő navigáció" class="relative z-50 flex items-center justify-between h-20">
-            <a href="#" class="text-lg font-medium tracking-tight font-geist text-neutral-100">lunar agency</a>
-            
+            <a href="/" class="text-lg font-medium tracking-tight font-geist text-neutral-100">lunar agency</a>
             <div class="hidden md:flex items-center gap-6">
-                <a href="#szolgaltatasok" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100">Szolgáltatások</a>
-                <a href="#arazas" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100">Árazás</a>
-                <a href="#gyik" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100">GYIK</a>
+                <a href="#szolgaltatasok" class="text-sm transition-colors font-geist text-neutral-300 hover:text-neutral-100">Szolgáltatások</a>
+                <a href="#arazas" class="text-sm transition-colors font-geist text-neutral-300 hover:text-neutral-100">Árazás</a>
+                <a href="#gyik" class="text-sm transition-colors font-geist text-neutral-300 hover:text-neutral-100">GYIK</a>
                 <button type="button" data-modal-trigger="consultation-modal" class="inline-flex items-center justify-center gap-2 transition-colors text-sm font-medium font-geist border rounded-full px-6 py-3 hover:bg-white/10 text-neutral-100 bg-white/5 border-white/10">
                     Ingyenes Konzultáció
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                 </button>
             </div>
-            
             <div class="md:hidden">
                 <button id="menu-btn" type="button" aria-expanded="false" class="z-50 p-2 -mr-2 text-neutral-200 hover:text-white">
                     <span class="sr-only">Menü megnyitása</span>
@@ -272,7 +158,20 @@
         <!-- Hero Section -->
         <section class="relative overflow-hidden sm:py-10 py-10">
             <div class="max-w-7xl mx-auto">
-                <!-- PERFORMANCE NOTE: The background image for this hero section is a critical element for the LCP. The current image is quite large (~1MB). For a significant performance improvement, consider compressing this image further or serving it in a next-gen format like WebP or AVIF. -->
+                <!-- 
+                    PERFORMANCE CRITICAL: The background image for this hero section is the Largest Contentful Paint (LCP) element. 
+                    The current image is a large PNG file (~1MB), which significantly slows down mobile page load.
+                    ACTION REQUIRED:
+                    1. Create a compressed WebP version of this image (e.g., hero-background.webp). Aim for a file size under 250KB.
+                    2. Replace the simple `style` attribute with a `<picture>` element inside this div to serve the appropriate image format.
+                    
+                    EXAMPLE:
+                    <picture class="absolute inset-0 w-full h-full -z-10">
+                        <source srcset="your-new-image.webp" type="image/webp">
+                        <source srcset="https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png" type="image/png">
+                        <img src="https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png" class="object-cover w-full h-full" alt="">
+                    </picture>
+                -->
                 <div class="relative min-h-[520px] sm:minh-[640px] lg:min-h-[720px] flex flex-col bg-center p-4 sm:p-12 lg:p-20 bg-neutral-950 bg-cover border-white/10 border rounded-3xl" style="background-image: url('https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68bf4bb3c6b33bb790560a03.png');">
                     <header class="mb-12 sm:mb-16">
                         <h1 class="block sm:text-8xl md:text-9xl lg:text-[10vw] text-6xl font-semibold" style="letter-spacing: -0.075em;">
@@ -287,7 +186,7 @@
                                     <p class="leading-6 text-sm text-neutral-300 font-geist">Dolgozzon kevesebbet. Érjen el többet.</p>
                                     <button type="button" data-modal-trigger="consultation-modal" class="inline-flex items-center justify-center gap-2 transition-colors text-sm font-medium font-geist border rounded-full px-6 py-3 hover:bg-white/10 text-neutral-100 bg-white/5 border-white/10">
                                         Ingyenes Konzultáció
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                                     </button>
                                 </div>
                             </div>
@@ -310,7 +209,8 @@
                     <div class="relative z-10">
                         <div class="lg:mb-16 text-center mb-6">
                             <h2 class="sm:text-5xl lg:text-6xl text-4xl tracking-tight font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-100 via-neutral-200 to-neutral-400/90 mb-4 opacity-0 translate-y-8 blur-sm pb-2" style="animation: slideInBlur 1s ease-out 0.5s forwards;">Weboldalak, amelyek <span class="italic font-['Playfair_Display']">szolgálnak</span></h2>
-                            <p class="max-w-2xl text-neutral-400 mx-auto">AI chatbotokkal, automatizált ügyfélszerzéssel és egységes kommunikációval.</p>
+                            <!-- ACCESSIBILITY FIX: Increased text contrast for better readability. -->
+                            <p class="max-w-2xl text-neutral-300 mx-auto">AI chatbotokkal, automatizált ügyfélszerzéssel és egységes kommunikációval.</p>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                             <article data-reveal="" data-reveal-index="0" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-black/30 min-h-[480px] p-6 sm:p-8 flex flex-col ring-0 transition-all duration-500 hover:border-white/20 hover:shadow-[0_30px_100px_-40px_rgba(59,130,246,0.35)]" style="transform: translateY(28px) scale(0.98); opacity: 0; filter: blur(6px);">
@@ -338,7 +238,6 @@
                                         <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
                                     </button>
                                 </div>
-                                <!-- subtle bottom accent -->
                                 <div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                             </article>
                             <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -391,7 +290,7 @@
                                                 <h3 class="text-xl font-semibold text-white tracking-tight">Minden érdeklődő egy helyen</h3>
                                                 <p class="text-sm text-neutral-400 mt-2 max-w-2xl">Nem kell többé 5 különböző platform között ugrálnia. Email, SMS, Facebook, Instagram – minden üzenet egyetlen, átlátható felületen landol. Az eredmény: azonnali válasz, nulla elveszett ügyfél.</p>
                                             </div>
-                                            <div class="flex gap-2">
+                                            <div class="flex flex-wrap gap-2">
                                                 <span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300">Email</span>
                                                 <span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300">SMS</span>
                                                 <span class="text-[11px] px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300">Messenger</span>
@@ -421,7 +320,7 @@
                     <div class="relative z-10">
                         <div class="text-center mb-16">
                             <h2 class="sm:text-6xl text-4xl tracking-tight font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-100 via-neutral-200 to-neutral-400/90 mb-6 opacity-0 translate-y-8 blur-sm pb-2" style="animation: slideInBlur 1s ease-out 0.5s forwards;">Válassza ki a számára <span class="italic font-['Playfair_Display']">tökéletes</span> megoldást</h2>
-                            <p class="max-w-3xl text-lg text-neutral-400 font-geist mx-auto">Nem óradíjat vagy funkciókat árazunk, hanem eredményt és felelősséget. A csomagok célja, hogy a befektetés ne költség, hanem egyértelműen megtérülő profitcentrum legyen.</p>
+                            <p class="max-w-3xl text-lg text-neutral-300 font-geist mx-auto">Nem óradíjat vagy funkciókat árazunk, hanem eredményt és felelősséget. A csomagok célja, hogy a befektetés ne költség, hanem egyértelműen megtérülő profitcentrum legyen.</p>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-slide-up">
                             <div class="flex flex-col border-white/10 border rounded-2xl p-8 bg-neutral-900/50 backdrop-blur-md">
@@ -477,7 +376,6 @@
                                     </div>
                                     <p class="text-sm text-neutral-400 mt-2 pl-9">Ha nem érjük el a közösen rögzített célokat, visszatérítjük a havidíjat és addig dolgozunk díjmentesen, amíg el nem érjük.</p>
                                 </div>
-                                
                                 <button type="button" data-modal-trigger="consultation-modal" class="block w-full text-center transition-colors text-sm font-semibold text-white bg-blue-500 rounded-full mt-8 py-3 px-6 hover:bg-blue-600">Konzultációt kérek</button>
                             </div>
                         </div>
@@ -490,21 +388,20 @@
             <div class="max-w-7xl mr-auto ml-auto">
                  <div class="animate-slide-up text-center mb-12">
                     <h2 class="sm:text-5xl lg:text-6xl text-4xl font-light text-white tracking-tighter mb-4">Kérdése van?</h2>
-                    <p class="max-w-2xl text-neutral-400 mx-auto">Itt megtalálja a válaszokat.</p>
+                    <p class="max-w-2xl text-neutral-300 mx-auto">Itt megtalálja a válaszokat.</p>
                 </div>
                 <div class="faq-component-wrapper animate-slide-up mx-auto w-full max-w-3xl rounded-2xl p-4 md:p-6" style="background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
                     <div class="mb-4 text-sm text-neutral-400">Gyakran ismételt kérdések</div>
-                    <!-- FAQ items will be dynamically injected here by JavaScript -->
                     <div id="faq-accordion-root" class="space-y-2"></div>
                 </div>
                 <div class="mt-20 text-center">
                     <h2 class="sm:text-6xl text-4xl tracking-tight font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-100 via-neutral-200 to-neutral-400/90 mb-6 opacity-0 translate-y-8 blur-sm pb-2" style="animation: slideInBlur 1s ease-out 0.5s forwards;">Készen áll arra, hogy <span class="italic font-['Playfair_Display']">átalakítsa</span> vállalkozása működését?</h2>
-                    <p class="max-w-2xl mx-auto mt-4 text-neutral-400">Azért vagyunk itt, hogy segítsük vállalkozását. Lépjen kapcsolatba velünk, és a lehető leghamarabb visszajelzünk.</p>
+                    <p class="max-w-2xl mx-auto mt-4 text-neutral-300">Azért vagyunk itt, hogy segítsük vállalkozását. Lépjen kapcsolatba velünk, és a lehető leghamarabb visszajelzünk.</p>
                     <div class="mt-8 flex flex-col items-center justify-center gap-6">
                         <button type="button" data-modal-trigger="consultation-modal" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 text-base font-semibold text-white rounded-full px-8 py-4 bg-blue-500 hover:bg-blue-600 transition-colors">
                             Foglaljon ingyenes Konzultációt
                         </button>
-                        <a href="mailto:support@lunaragency.hu" class="inline-flex items-center justify-center gap-2 text-sm text-neutral-400 transition-colors hover:text-white">
+                        <a href="mailto:support@lunaragency.hu" class="inline-flex items-center justify-center gap-2 text-sm text-neutral-300 transition-colors hover:text-white">
                             <i data-lucide="mail" class="h-4 w-4"></i>
                             <span>support@lunaragency.hu</span>
                         </a>
@@ -525,7 +422,6 @@
                             <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-400">
                                 <a href="#" class="transition-colors font-geist hover:text-neutral-100">Adatvédelem</a>
                                 <a href="mailto:support@lunaragency.hu" class="transition-colors font-geist hover:text-neutral-100">support@lunaragency.hu</a>
-                                <!-- ENHANCEMENT: Removed hardcoded year to prevent showing wrong info before JS loads. -->
                                 <span class="font-geist text-neutral-500">© <span id="current-year"></span></span>
                             </div>
                         </div>
@@ -539,228 +435,98 @@
 <!-- Consultation Modal -->
 <div id="consultation-modal" class="fixed inset-0 z-50 flex items-start justify-center bg-black bg-opacity-70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 overflow-y-auto py-10">
     <div id="modal-panel" class="relative bg-neutral-900 border border-white/10 rounded-2xl w-full max-w-3xl m-4 p-8 shadow-2xl transform transition-all duration-300 scale-95 opacity-0">
-        <!-- ENHANCEMENT: Added aria-label for better accessibility. -->
         <button id="close-modal-btn" aria-label="Bezárás" class="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors z-10">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
-        
-        <!-- This container will hold the calendar iframe -->
         <div id="modal-content-wrapper">
             <div id="form-content">
                 <h2 class="text-3xl font-geist font-semibold text-white mb-2">Időpontfoglalás</h2>
                 <p class="text-neutral-400 mb-6">Válasszon egy Önnek megfelelő időpontot egy ingyenes, 15 perces konzultációra.</p>
-                <!-- GoHighLevel Calendar Embed Starts -->
                 <div class="rounded-lg">
-                    <!-- ENHANCEMENT: Added lazy loading to the iframe for better initial page performance. -->
                     <iframe src="https://api.leadconnectorhq.com/widget/booking/kZMZ6vGYyrjBY95fPKLd?v=2" style="width: 100%; border:none; min-height: 650px;" loading="lazy" id="kZMZ6vGYyrjBY95fPKLd_1757767813947"></iframe>
                 </div>
-                <!-- GoHighLevel Calendar Embed Ends -->
             </div>
         </div>
     </div>
 </div>
 
-<!-- ENHANCEMENT: Added a "Back to Top" button for better user experience on long pages. -->
 <button id="back-to-top" title="Vissza a tetejére" class="fixed bottom-5 right-5 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition-all duration-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
     <span class="sr-only">Vissza a tetejére</span>
 </button>
 
-<!-- OPTIMIZATION: Defer loading of non-critical scripts (animations, form embeds) to prevent render-blocking. -->
+<!-- OPTIMIZATION: Defer loading of non-critical scripts. -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" defer></script>
+<!-- PERFORMANCE FIX: Conditionally load and initialize the heavy Unicorn Studio script only on larger screens. -->
+<script type="text/javascript">
+    (function(){
+        // Only run the animation on screens wider than 768px to save resources on mobile.
+        if (window.matchMedia('(min-width: 768px)').matches) {
+            if(window.UnicornStudio) return;
+            window.UnicornStudio = {isInitialized: false};
+            var script = document.createElement("script");
+            script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js";
+            script.onload = function() {
+                if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
+                    try {
+                        var result = window.UnicornStudio.init();
+                        if (result && typeof result.catch === 'function') {
+                            result.catch(function(error) { console.error("Unicorn Studio promise was rejected:", error); });
+                        }
+                        window.UnicornStudio.isInitialized = true;
+                    } catch (error) {
+                        console.error("Error initializing Unicorn Studio:", error);
+                    }
+                }
+            };
+            script.onerror = function() { console.error("Failed to load Unicorn Studio script."); };
+            document.getElementById('background-animation-wrapper').appendChild(script);
+        }
+    })();
+</script>
 
 <script>
-// --- Gradual Blur Class (Refactored to remove math.js dependency) ---
-class GradualBlur {
-    constructor(targetElement, config = {}) {
-        this.containerRef = null;
-        this.isHovered = false;
-
-        const DEFAULT_CONFIG = {
-            position: 'bottom',
-            strength: 2,
-            height: '6rem',
-            divCount: 5,
-            exponential: false,
-            zIndex: 1000,
-            opacity: 1,
-            curve: 'linear',
-            target: 'parent',
-            className: '',
-            style: {}
-        };
-
-        this.config = { ...DEFAULT_CONFIG, ...config };
-        this.targetElement = targetElement;
-
-        this.CURVE_FUNCTIONS = {
-            linear: p => p,
-            bezier: p => p * p * (3 - 2 * p),
-            'ease-in': p => p * p,
-            'ease-out': p => 1 - Math.pow(1 - p, 2),
-            'ease-in-out': p => (p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2)
-        };
-        
-        this.init();
-    }
-    
-    getGradientDirection(position) {
-        const directions = {
-            top: 'to top',
-            bottom: 'to bottom',
-            left: 'to left',
-            right: 'to right'
-        };
-        return directions[position] || 'to bottom';
-    }
-
-    createBlurDivs() {
-        const divs = document.createDocumentFragment();
-        const increment = 100 / this.config.divCount;
-        const currentStrength = this.isHovered && this.config.hoverIntensity ? this.config.strength * this.config.hoverIntensity : this.config.strength;
-        const curveFunc = this.CURVE_FUNCTIONS[this.config.curve] || this.CURVE_FUNCTIONS.linear;
-
-        for (let i = 1; i <= this.config.divCount; i++) {
-            let progress = i / this.config.divCount;
-            progress = curveFunc(progress);
-
-            let blurValue;
-            if (this.config.exponential) {
-                // Replaced math.pow with Math.pow
-                blurValue = Math.pow(2, progress * 4) * 0.0625 * currentStrength;
-            } else {
-                blurValue = 0.0625 * (progress * this.config.divCount + 1) * currentStrength;
-            }
-            
-            // Replaced math.round with Math.round
-            const p1 = Math.round((increment * i - increment) * 10) / 10;
-            const p2 = Math.round(increment * i * 10) / 10;
-            const p3 = Math.round((increment * i + increment) * 10) / 10;
-            const p4 = Math.round((increment * i + increment * 2) * 10) / 10;
-            let gradient = `transparent ${p1}%, black ${p2}%`;
-            if (p3 <= 100) gradient += `, black ${p3}%`;
-            if (p4 <= 100) gradient += `, transparent ${p4}%`;
-            
-            const direction = this.getGradientDirection(this.config.position);
-
-            const div = document.createElement('div');
-            div.style.position = 'absolute';
-            div.style.inset = '0';
-            div.style.maskImage = `linear-gradient(${direction}, ${gradient})`;
-            div.style.webkitMaskImage = `linear-gradient(${direction}, ${gradient})`;
-            div.style.backdropFilter = `blur(${blurValue.toFixed(3)}rem)`;
-            div.style.webkitBackdropFilter = `blur(${blurValue.toFixed(3)}rem)`;
-            div.style.opacity = this.config.opacity;
-
-            divs.appendChild(div);
-        }
-        return divs;
-    }
-    
-    applyContainerStyles() {
-        const { position, target, hoverIntensity, zIndex, style, height, width } = this.config;
-        const isVertical = ['top', 'bottom'].includes(position);
-        const isHorizontal = ['left', 'right'].includes(position);
-        const isPageTarget = target === 'page';
-
-        const baseStyle = {
-            position: isPageTarget ? 'fixed' : 'absolute',
-            pointerEvents: hoverIntensity ? 'auto' : 'none',
-            zIndex: isPageTarget ? 30 : zIndex, // Modified z-index for page target to be below header/modal
-            ...style
-        };
-        
-        Object.assign(this.containerRef.style, baseStyle);
-        
-        if (isVertical) {
-            this.containerRef.style.height = height;
-            this.containerRef.style.width = width || '100%';
-            this.containerRef.style[position] = '0';
-            this.containerRef.style.left = '0';
-            this.containerRef.style.right = '0';
-        } else if (isHorizontal) {
-            this.containerRef.style.width = width || height;
-            this.containerRef.style.height = '100%';
-            this.containerRef.style[position] = '0';
-            this.containerRef.style.top = '0';
-            this.containerRef.style.bottom = '0';
-        }
-    }
-
-    init() {
-        this.containerRef = document.createElement('div');
-        this.containerRef.className = `gradual-blur ${this.config.className}`;
-        
-        this.applyContainerStyles();
-
-        const innerDiv = document.createElement('div');
-        innerDiv.className = 'gradual-blur-inner';
-        innerDiv.style.position = 'relative';
-        innerDiv.style.width = '100%';
-        innerDiv.style.height = '100%';
-        
-        innerDiv.appendChild(this.createBlurDivs());
-        this.containerRef.appendChild(innerDiv);
-        
-        if (this.config.hoverIntensity) {
-            this.containerRef.addEventListener('mouseenter', () => {
-                this.isHovered = true;
-                innerDiv.innerHTML = '';
-                innerDiv.appendChild(this.createBlurDivs());
-            });
-             this.containerRef.addEventListener('mouseleave', () => {
-                this.isHovered = false;
-                innerDiv.innerHTML = '';
-                innerDiv.appendChild(this.createBlurDivs());
-            });
-        }
-        
-        this.targetElement.appendChild(this.containerRef);
-    }
-}
-
-
-// --- Global Modal Logic ---
-const openModal = (modal) => {
-    if (!modal) return;
-    const modalPanel = modal.querySelector('#modal-panel');
-    modal.classList.remove('hidden');
-    document.body.classList.add('overflow-hidden');
-    gsap.to(modal, { opacity: 1, duration: 0.3 });
-    gsap.to(modalPanel, { scale: 1, opacity: 1, duration: 0.3, delay: 0.1 });
-};
-const closeModal = (modal) => {
-    if (!modal) return;
-    const modalPanel = modal.querySelector('#modal-panel');
-    gsap.to(modalPanel, { scale: 0.95, opacity: 0, duration: 0.2 });
-    gsap.to(modal, { 
-        opacity: 0, 
-        duration: 0.2, 
-        delay: 0.1,
-        onComplete: () => {
-            modal.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-    });
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-    const problematicSection = document.getElementById('szolgaltatasok');
-    
-    // Instance for the bottom of the page
-    new GradualBlur(document.body, {
-        target: "page",
-        position: "bottom",
-        height: "4rem",
-        strength: 2,
-        divCount: 5,
-        curve: "bezier",
-        exponential: true,
-        zIndex: 30,
-        className: 'page-bottom-blur' // Add a unique class for targeting
-    });
-
+    // --- Global Modal Logic ---
+    const openModal = (modal) => {
+        if (!modal) return;
+        const modalPanel = modal.querySelector('#modal-panel');
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        if (typeof gsap !== 'undefined') {
+            gsap.to(modal, { opacity: 1, duration: 0.3 });
+            gsap.to(modalPanel, { scale: 1, opacity: 1, duration: 0.3, delay: 0.1 });
+        } else {
+            modal.style.opacity = '1';
+            modalPanel.style.opacity = '1';
+            modalPanel.style.transform = 'scale(1)';
+        }
+    };
+    const closeModal = (modal) => {
+        if (!modal) return;
+        const modalPanel = modal.querySelector('#modal-panel');
+        if (typeof gsap !== 'undefined') {
+            gsap.to(modalPanel, { scale: 0.95, opacity: 0, duration: 0.2 });
+            gsap.to(modal, { 
+                opacity: 0, 
+                duration: 0.2, 
+                delay: 0.1,
+                onComplete: () => {
+                    modal.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                }
+            });
+        } else {
+            modal.style.opacity = '0';
+            modalPanel.style.opacity = '0';
+            modalPanel.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 300);
+        }
+    };
 
     // --- Set Current Year in Footer ---
     const yearEl = document.getElementById('current-year');
@@ -831,11 +597,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Back to Top Button Logic ---
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        }, { passive: true });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // --- FAQ Section Logic ---
-    if (typeof gsap === 'undefined') {
-        console.error("GSAP library not found. Accordion animations will not work.");
-    }
     const faqData = [
         { id: 1, question: "Ez egy szoftver vagy egy szolgáltatás?", answer: "Ez egy all-in-one marketing rendszer, amit a vállalkozására szabunk. Nem csak egy szoftvert kap, hanem automatikusan beállított eszközöket (CRM, időpontfoglaló, weboldal, funnel, stb.), és betanítást és támogatást is mellé.", icon: "🤖" },
         { id: 2, question: "Miben különbözik ez a rendszer más szoftverektől?", answer: "Ez nem csak egy szoftver – hanem 33 szoftver ereje egy rendszerbe integrálva. Nem kell külön fizetnie több százezreket-milliókat weboldalért, időpontfoglalóért, e-mail küldőért, CRM-ért – itt minden egy helyen van, automatikusan beállítva.", icon: "✨" },
@@ -882,26 +659,30 @@ document.addEventListener('DOMContentLoaded', () => {
                         otherItem.classList.remove('is-open');
                         const oc = otherItem.querySelector('.faq-content');
                         if (oc) {
-                            gsap.to(oc, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });
+                             if (typeof gsap !== 'undefined') {
+                                gsap.to(oc, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });
+                            }
                         }
                     }
                 });
                 item.classList.toggle('is-open');
                 if (isOpen) {
-                    gsap.to(content, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });
+                     if (typeof gsap !== 'undefined') {
+                        gsap.to(content, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });
+                    }
                 } else {
-                    gsap.set(content, { visibility: 'visible' });
-                    gsap.to(content, { height: contentInner.offsetHeight, opacity: 1, duration: 0.4, ease: 'power3.out' });
+                     if (typeof gsap !== 'undefined') {
+                        gsap.set(content, { visibility: 'visible' });
+                        gsap.to(content, { height: contentInner.offsetHeight, opacity: 1, duration: 0.4, ease: 'power3.out' });
+                    }
                 }
             });
         });
     }
-    // --- Features: Lucide + sequence reveal (TILT EFFECT REMOVED FOR PERFORMANCE) ---
+    // --- Features: Lucide + sequence reveal ---
     try {
         if (window.lucide && typeof window.lucide.createIcons === 'function') {
             window.lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
-        } else {
-            console.warn('Lucide script not yet loaded. Icons may not appear immediately.');
         }
     } catch (e) { console.error('Error creating Lucide icons:', e); }
     const featuresRoot = document.querySelector('#szolgaltatasok');
@@ -912,7 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.isIntersecting) {
                     const el = entry.target;
                     const idx = Number(el.getAttribute('data-reveal-index') || 0);
-                    const delay = 120 + idx * 100; // ms
+                    const delay = 120 + idx * 100;
                     requestAnimationFrame(() => {
                         el.style.transition = 'opacity .7s ease, transform .7s ease, filter .7s ease';
                         el.style.transitionDelay = `${delay}ms`;
