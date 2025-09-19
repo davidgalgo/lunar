@@ -831,20 +831,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Back to Top Button Logic ---
-    const backToTopButton = document.getElementById('back-to-top');
-    if (backToTopButton) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                backToTopButton.classList.remove('hidden');
-            } else {
-                backToTopButton.classList.add('hidden');
-            }
-        }, { passive: true });
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
 
     // --- FAQ Section Logic ---
     if (typeof gsap === 'undefined') {
