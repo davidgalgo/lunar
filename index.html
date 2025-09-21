@@ -6,6 +6,10 @@
     <title>Lunar Agency - AI & Automatizáció</title>
     <meta name="description" content="Lunar Agency - AI és automatizációs megoldások vállalatoknak. Mesterséges intelligencia, folyamatoptimalizálás és digitális transzformáció szakértői.">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68c6b424da82554db459f148.png">
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68c6b424da82554db459f148.png">
+    
     <!-- MOBILE OPTIMIZATION: Additional performance hints -->
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -116,9 +120,13 @@
           .animate-slide-up { 
             animation-duration: 0.3s !important; 
           }
-          /* Reduce blur effects on mobile */
-          .blur-sm { filter: blur(2px) !important; }
-          .blur-md { filter: blur(4px) !important; }
+          /* Remove blur effects on mobile for better readability */
+          .blur-sm { filter: blur(0px) !important; }
+          .blur-md { filter: blur(0px) !important; }
+          .blur-2xl { filter: blur(0px) !important; }
+          .blur-3xl { filter: blur(0px) !important; }
+          /* Remove blur from animated elements */
+          [style*="filter: blur"] { filter: blur(0px) !important; }
         }
         
         /* MOBILE OPTIMIZATION: Optimize touch interactions */
@@ -160,6 +168,22 @@
                 opacity: 1;
                 transform: translateY(0px);
                 filter: blur(0px);
+            }
+        }
+        
+        /* Mobile version without blur */
+        @media (max-width: 768px) {
+            @keyframes slideInBlur {
+                from {
+                    opacity: 0;
+                    transform: translateY(32px);
+                    filter: blur(0px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0px);
+                    filter: blur(0px);
+                }
             }
         }
     </style>
@@ -342,7 +366,7 @@
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden fixed inset-0 z-40 backdrop-blur-lg bg-neutral-950/95">
+        <div id="mobile-menu" class="hidden fixed inset-0 z-50 backdrop-blur-lg bg-neutral-950/95">
             <div class="flex flex-col items-center justify-center h-full gap-8">
                 <a href="#szolgaltatasok" class="text-2xl font-geist text-neutral-200">Szolgáltatások</a>
                 <a href="#arazas" class="text-2xl font-geist text-neutral-200">Árazás</a>
