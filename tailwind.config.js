@@ -2,7 +2,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.html", // Csak ez az egy sor marad!
+    "./*.html",
+    "./dist/**/*.html",
   ],
   theme: {
     extend: {},
