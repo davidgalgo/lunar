@@ -120,13 +120,16 @@
           .animate-slide-up { 
             animation-duration: 0.3s !important; 
           }
-          /* Remove blur effects on mobile for better readability */
+          /* Remove blur effects on mobile for better readability - but keep decorative blurs */
           .blur-sm { filter: blur(0px) !important; }
           .blur-md { filter: blur(0px) !important; }
-          .blur-2xl { filter: blur(0px) !important; }
-          .blur-3xl { filter: blur(0px) !important; }
-          /* Remove blur from animated elements */
-          [style*="filter: blur"] { filter: blur(0px) !important; }
+          /* Keep decorative blur effects for visual elements */
+          .blur-2xl { filter: blur(24px) !important; }
+          .blur-3xl { filter: blur(40px) !important; }
+          /* Remove blur from animated text elements only */
+          h1[style*="filter: blur"], h2[style*="filter: blur"], h3[style*="filter: blur"], 
+          p[style*="filter: blur"], span[style*="filter: blur"], 
+          [data-reveal][style*="filter: blur"] { filter: blur(0px) !important; }
         }
         
         /* MOBILE OPTIMIZATION: Optimize touch interactions */
