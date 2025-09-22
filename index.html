@@ -136,6 +136,19 @@
             min-width: 44px;
           }
         }
+        
+        /* MOBILE MENU: Ensure mobile menu is always on top */
+        #mobile-menu {
+          z-index: 60 !important;
+        }
+        
+        /* MOBILE MENU: Hide hero content when mobile menu is open */
+        @media (max-width: 768px) {
+          body.mobile-menu-open .hero-section {
+            opacity: 0.3;
+            pointer-events: none;
+          }
+        }
         .animate-letter-slide-in { animation: letterSlideIn 0.8s ease-out forwards; }
         .animate-slide-up { animation: slideUp 0.6s ease-out both; }
         /* --- FAQ STYLES --- */
@@ -366,7 +379,7 @@
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden fixed inset-0 z-50 backdrop-blur-lg bg-neutral-950/95">
+        <div id="mobile-menu" class="hidden fixed inset-0 z-[60] backdrop-blur-lg bg-neutral-950/95">
             <div class="flex flex-col items-center justify-center h-full gap-8">
                 <a href="#szolgaltatasok" class="text-2xl font-geist text-neutral-200">Szolgáltatások</a>
                 <a href="#arazas" class="text-2xl font-geist text-neutral-200">Árazás</a>
@@ -380,10 +393,10 @@
     </header>
     <main class="mt-4">
         <!-- Hero Section -->
-        <section class="relative overflow-hidden sm:py-10 py-10">
+        <section class="hero-section relative overflow-hidden sm:py-10 py-10">
             <div class="max-w-7xl mx-auto">
                 <!-- PERFORMANCE NOTE: The background image for this hero section is a critical element for the LCP. The current image is quite large (~1MB). For a significant performance improvement, consider compressing this image further or serving it in a next-gen format like WebP or AVIF. -->
-                <div class="relative min-h-[520px] sm:minh-[640px] lg:min-h-[720px] flex flex-col bg-center p-4 sm:p-12 lg:p-20 bg-neutral-950 bg-cover border-white/10 border rounded-3xl" style="background-image: url('https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68cfa4fb074b8d4e98dba87f.webp');">
+                <div class="relative min-h-[520px] sm:minh-[640px] lg:min-h-[720px] flex flex-col bg-center p-4 sm:p-12 lg:p-20 bg-neutral-950 bg-cover border-white/10 border rounded-3xl z-10" style="background-image: url('https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68cfa4fb074b8d4e98dba87f.webp');">
                     <header class="mb-12 sm:mb-16">
                         <h1 class="block sm:text-8xl md:text-9xl lg:text-[10vw] text-6xl font-semibold" style="letter-spacing: -0.075em;">
                             <span class="inline-block animate-letter-slide-in text-neutral-50 font-geist" style="animation-delay: 0s;">L</span><span class="inline-block animate-letter-slide-in text-neutral-200 font-geist" style="animation-delay: 0.1s;">U</span><span class="inline-block animate-letter-slide-in text-neutral-400 font-geist" style="animation-delay: 0.2s;">N</span><span class="inline-block animate-letter-slide-in text-neutral-500 font-geist" style="animation-delay: 0.3s;">A</span><span class="inline-block animate-letter-slide-in text-neutral-600 font-geist" style="animation-delay: 0.4s;">R</span>
@@ -880,6 +893,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuOpenIcon.classList.remove('hidden');
         menuCloseIcon.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
+        document.body.classList.remove('mobile-menu-open');
         menuBtn.setAttribute('aria-expanded', 'false');
     };
     if (menuBtn) {
@@ -891,7 +905,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenu.classList.remove('hidden');
                 menuOpenIcon.classList.add('hidden');
                 menuCloseIcon.classList.remove('hidden');
-                document.body.classList.add('overflow-hidden'); 
+                document.body.classList.add('overflow-hidden');
+                document.body.classList.add('mobile-menu-open');
                 menuBtn.setAttribute('aria-expanded', 'true');
             }
         });
