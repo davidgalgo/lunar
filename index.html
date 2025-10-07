@@ -41,15 +41,6 @@
             padding: 0; 
         }
         .font-geist { font-family: 'Geist Sans', sans-serif; }
-        /* Ensure background doesn't cause layout shift */
-        .aura-background-component { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            z-index: -10; 
-        }
         /* Critical header styles */
         header { position: relative; z-index: 10; }
         .max-w-7xl { max-width: 80rem; }
@@ -75,12 +66,6 @@
             gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
             gsapScript.async = true;
             document.head.appendChild(gsapScript);
-            
-            // Load Unicorn Studio script after page load
-            const unicornScript = document.createElement('script');
-            unicornScript.src = 'https://cdn.jsdelivr.net/npm/unicorn-studio@latest/dist/unicornStudio.umd.js';
-            unicornScript.async = true;
-            document.head.appendChild(unicornScript);
         });
     </script>
     
@@ -315,48 +300,9 @@
     </script>
 </head>
 <body class="h-full antialiased text-zinc-100 bg-gradient-to-b from-[#000000] to-[#1c1c1c]/20">
-<!-- Background Animation -->
-<div class="aura-background-component top-0 w-full h-screen -z-10 absolute"><div class="aura-background-component top-0 w-full -z-10 absolute h-full">
-  <div data-us-project="2IcJ39Gx68KiPG1qlgj8" class="absolute w-full h-full left-0 top-0 -z-10"></div>
-  <script type="text/javascript">
-    // MOBILE OPTIMIZATION: Smart loading of Unicorn Studio background
-    // Load after critical content but before user interaction
-    let unicornLoaded = false;
-    
-    function loadUnicornStudio() {
-        if (unicornLoaded || window.UnicornStudio) return;
-        unicornLoaded = true;
-        
-        (function(){
-            window.UnicornStudio = {isInitialized: false};
-            var script = document.createElement("script");
-            script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js";
-            script.async = true;
-            script.onload = function() {
-                if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
-                    try {
-                        var result = window.UnicornStudio.init();
-                        if (result && typeof result.catch === 'function') {
-                            result.catch(function(error) { console.error("Unicorn Studio promise was rejected:", error); });
-                        }
-                        window.UnicornStudio.isInitialized = true;
-                    } catch (error) {
-                        console.error("Error initializing Unicorn Studio:", error);
-                    }
-                }
-            };
-            script.onerror = function() { console.error("Failed to load Unicorn Studio script."); };
-            (document.head || document.body).appendChild(script);
-        })();
-    }
-    
-    // Load on page load or user interaction (whichever comes first)
-    window.addEventListener('load', loadUnicornStudio);
-    document.addEventListener('touchstart', loadUnicornStudio, { once: true });
-    document.addEventListener('mousemove', loadUnicornStudio, { once: true });
-    document.addEventListener('scroll', loadUnicornStudio, { once: true });
-  </script>
-</div></div>
+<div class="video-background-container absolute top-0 w-full -z-10 h-screen">
+  <video src="https://storage.googleapis.com/msgsndr/tQYsegvUGZjPwRByOG6g/media/68e4e3edbb291500e664e2ee.webm" autoplay loop muted playsinline class="w-full h-full object-cover" id="aura-video"></video>
+</div>
     
 <div class="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
     <!-- Header & Navigation -->
