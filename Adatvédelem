@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adatvédelmi Tájékoztató | Lunar Agency</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+        }
+        .font-geist {
+            font-family: 'Geist Sans', sans-serif;
+        }
+        .prose {
+            color: #d4d4d4; /* neutral-300 */
+        }
+        .prose h1, .prose h2, .prose h3 {
+            color: #f5f5f5; /* neutral-100 */
+        }
+        .prose a {
+            color: #60a5fa; /* blue-400 */
+        }
+        .prose strong {
+            color: #fafafa; /* neutral-50 */
+        }
+        .prose ul > li::before {
+            background-color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="h-full antialiased text-zinc-100 bg-black">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-bold font-geist text-white tracking-tight">Adatvédelmi Tájékoztató</h1>
+            <p class="mt-4 text-lg text-neutral-400">Utolsó frissítés: 2025. október 7.</p>
+        </header>
+        
+        <article class="prose prose-invert max-w-none prose-lg">
+            <p>Galgóczy Dávid (a továbbiakban: "Adatkezelő") elkötelezett a weboldalunk látogatói és ügyfelei személyes adatainak védelme iránt. Ez a tájékoztató leírja, hogyan gyűjtjük, használjuk, és kezeljük az Ön személyes adatait az Európai Unió Általános Adatvédelmi Rendelete (GDPR) és a vonatkozó magyar jogszabályok (pl. az információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény) alapján.</p>
+            <p><em>Megjegyzés: jelenleg a weboldal bemutatkozó és időpontfoglaló jellegű. Amennyiben a Szolgáltató más jogi formává válik, az ÁSZF és az adatkezelési tájékoztató frissítésre kerül.</em></p>
+            <h2>1. Az Adatkezelő adatai</h2>
+            <ul>
+                <li><strong>Adatkezelő neve:</strong> Galgóczy Dávid</li>
+                <li><strong>Kapcsolattartó e-mail:</strong> support@lunaragency.hu</li>
+            </ul>
+
+            <h2>2. A kezelt személyes adatok köre, célja és jogalapja</h2>
+            <p>Weboldalunkon keresztül az időpontfoglalás során gyűjtünk személyes adatokat.</p>
+            <ul>
+                <li><strong>Kezelt adatok:</strong> Név, e-mail cím, telefonszám.</li>
+                <li><strong>Az adatkezelés célja:</strong> Kapcsolatfelvétel, ingyenes online konzultáció időpontjának egyeztetése, a konzultációval kapcsolatos emlékeztetők és információk küldése.</li>
+                <li><strong>Az adatkezelés jogalapja:</strong> A szerződés teljesítéséhez szükséges adatkezelés (GDPR 6. cikk (1) b) pont), valamint ahol releváns, az Ön önkéntes hozzájárulása (GDPR 6. cikk (1) a) pont).</li>
+            </ul>
+
+            <h2>3. Az adatkezelés időtartama</h2>
+            <p>A személyes adatokat a konzultáció megtartásáig, illetve az azt követő 1 évig őrizzük meg, kivéve ha Ön előbb kéri azok törlését. A hozzájárulás visszavonása nem érinti a visszavonás előtti adatkezelés jogszerűségét.</p>
+
+            <h2>4. Adatfeldolgozók</h2>
+            <p>Az adatok kezelése során külső szolgáltatókat (adatfeldolgozókat) veszünk igénybe:</p>
+            <ul>
+                <li><strong>Tárhelyszolgáltató:</strong> Netlify, Inc. (USA)</li>
+                <li><strong>Időpontfoglaló és CRM rendszer:</strong> GoHighLevel (Chiptrail Inc., USA)</li>
+                <li><strong>E-mail szolgáltató:</strong> pl. Google Workspace (Google LLC), ha Gmail-t használunk</li>
+            </ul>
+            <p>Az USA-ba történő adattovábbítás GDPR szerinti megfelelő garanciák (pl. Standard Contractual Clauses) mellett történik.</p>
+
+            <h2>5. Az Ön jogai (Érintetti jogok)</h2>
+            <p>Önt a GDPR alapján az alábbi jogok illetik meg: hozzáférés, helyesbítés, törlés, adatkezelés korlátozása, tiltakozás, adathordozhatóság. Jogait a <a href="mailto:support@lunaragency.hu">support@lunaragency.hu</a> címen gyakorolhatja.</p>
+
+            <h2>6. Jogorvoslati lehetőségek</h2>
+            <p>Panasz esetén Ön jogosult a Nemzeti Adatvédelmi és Információszabadság Hatósághoz fordulni:</p>
+            <ul>
+                <li><strong>Név:</strong> Nemzeti Adatvédelmi és Információszabadság Hatóság</li>
+                <li><strong>Cím:</strong> 1055 Budapest, Falk Miksa utca 9-11.</li>
+                <li><strong>Weboldal:</strong> <a href="http://www.naih.hu" target="_blank" rel="noopener noreferrer">http://www.naih.hu</a></li>
+            </ul>
+
+            <h2>7. Sütik (Cookies)</h2>
+            <p>Weboldalunk sütiket használ a felhasználói élmény javítása érdekében. A sütik kezeléséről külön tájékoztatót biztosítunk a weboldalon megjelenő süti-sávban.</p>
+        </article>
+
+        <div class="mt-12 text-center">
+             <a href="/" class="inline-flex items-center justify-center gap-2 transition-colors text-sm font-medium font-geist border rounded-full px-6 py-3 hover:bg-white/10 text-neutral-100 bg-white/5 border-white/10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                Vissza a Főoldalra
+            </a>
+        </div>
+    </div>
+</body>
+</html>
