@@ -28,8 +28,8 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"></noscript>
     
-    <!-- PERFORMANCE: Using locally built Tailwind CSS for optimal performance -->
-    <link href="./dist/tailwind.css" rel="stylesheet">
+    <!-- FIX: Replaced local Tailwind CSS with the CDN for portability and previewing. -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- MOBILE OPTIMIZATION: Critical CSS for above-the-fold content -->
     <style>
@@ -39,6 +39,7 @@
             background-color: #0a0a0a; 
             margin: 0; 
             padding: 0; 
+            overflow-x: hidden; /* FIX: Prevents horizontal scroll */
         }
         .font-geist { font-family: 'Geist Sans', sans-serif; }
         /* Critical header styles */
@@ -56,22 +57,25 @@
     
     <!-- OPTIMIZATION: Defer loading of non-critical scripts to prevent render-blocking -->
     <script src="https://unpkg.com/lucide@latest" defer></script>
-    <!-- Smooth Scroll: Lenis -->
-    <script src="https://unpkg.com/@studio-freight/lenis@latest/bundled/lenis.min.js" defer></script>
+    <!-- Smooth Scroll: Lenis (Updated to user-provided URL) -->
+    <script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js" defer></script>
     
     <!-- PERFORMANCE: Defer third-party scripts to reduce main thread blocking -->
-    <script>
-        // Defer third-party scripts until after page load
-        window.addEventListener('load', function() {
-            // Load GSAP after page load
-            const gsapScript = document.createElement('script');
-            gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
-            gsapScript.async = true;
-            document.head.appendChild(gsapScript);
-        });
-    </script>
+    <!-- FIX: Load GSAP deferred in the head to fix race condition. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     
     <style>
+        /* Lenis Smooth Scroll CSS */
+        html.lenis {
+          height: auto;
+        }
+        .lenis.lenis-smooth {
+          scroll-behavior: auto !important;
+        }
+        .lenis.lenis-stopped {
+          overflow: hidden;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a0a;
@@ -613,7 +617,6 @@
                             <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-400">
                                 <a href="#" class="transition-colors font-geist hover:text-neutral-100">Adatvédelem</a>
                                 <a href="mailto:support@lunaragency.hu" class="transition-colors font-geist hover:text-neutral-100">support@lunaragency.hu</a>
-                                <!-- ENHANCEMENT: Removed hardcoded year to prevent showing wrong info before JS loads. -->
                                 <span class="font-geist text-neutral-500">© <span id="current-year"></span></span>
                             </div>
                         </div>
@@ -624,12 +627,16 @@
     </main>
 </div>
 
+<!-- ADD: Back to Top Button -->
+<button id="back-to-top" class="hidden fixed bottom-6 right-6 z-40 p-3 rounded-full bg-white/10 border border-white/10 text-neutral-200 hover:bg-white/20 backdrop-blur-sm transition-all duration-300" aria-label="Vissza a tetejére">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m18 15-6-6-6 6"></path></svg>
+</button>
+
 <!-- Consultation Modal -->
 <div id="consultation-modal" class="fixed inset-0 z-50 flex items-start justify-center bg-black bg-opacity-70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 overflow-y-auto py-10">
     <div id="modal-panel" class="relative bg-neutral-900 border border-white/10 rounded-2xl w-full max-w-3xl m-4 p-8 shadow-2xl transform transition-all duration-300 scale-95 opacity-0">
-        <!-- ENHANCEMENT: Added aria-label for better accessibility. -->
         <button id="close-modal-btn" aria-label="Bezárás" class="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
         
         <!-- This container will hold the calendar iframe -->
@@ -639,7 +646,6 @@
                 <p class="text-neutral-400 mb-6">Válasszon egy Önnek megfelelő időpontot egy ingyenes, 15 perces konzultációra.</p>
                 <!-- GoHighLevel Calendar Embed Starts -->
                 <div class="rounded-lg">
-                    <!-- ENHANCEMENT: Added lazy loading to the iframe for better initial page performance. -->
                     <iframe src="https://api.leadconnectorhq.com/widget/booking/kZMZ6vGYyrjBY95fPKLd?v=2" style="width: 100%; border:none; min-height: 650px;" loading="lazy" id="kZMZ6vGYyrjBY95fPKLd_1757767813947"></iframe>
                 </div>
                 <!-- GoHighLevel Calendar Embed Ends -->
@@ -648,7 +654,7 @@
     </div>
 </div>
 
-<!-- OPTIMIZATION: Defer loading of non-critical scripts (animations, form embeds) to prevent render-blocking. -->
+<!-- OPTIMIZATION: Defer loading of non-critical scripts (form embeds) -->
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" defer></script>
 
 <script>
@@ -808,28 +814,45 @@ const openModal = (modal) => {
     const modalPanel = modal.querySelector('#modal-panel');
     modal.classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
-    gsap.to(modal, { opacity: 1, duration: 0.3 });
-    gsap.to(modalPanel, { scale: 1, opacity: 1, duration: 0.3, delay: 0.1 });
+    // Use GSAP if available, otherwise fallback
+    if (typeof gsap !== 'undefined') {
+        gsap.to(modal, { opacity: 1, duration: 0.3 });
+        gsap.to(modalPanel, { scale: 1, opacity: 1, duration: 0.3, delay: 0.1 });
+    } else {
+        modal.style.opacity = '1';
+        modalPanel.style.opacity = '1';
+        modalPanel.style.transform = 'scale(1)';
+    }
 };
 const closeModal = (modal) => {
     if (!modal) return;
     const modalPanel = modal.querySelector('#modal-panel');
-    gsap.to(modalPanel, { scale: 0.95, opacity: 0, duration: 0.2 });
-    gsap.to(modal, { 
-        opacity: 0, 
-        duration: 0.2, 
-        delay: 0.1,
-        onComplete: () => {
-            modal.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-    });
+    
+    const onComplete = () => {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    };
+
+    if (typeof gsap !== 'undefined') {
+        gsap.to(modalPanel, { scale: 0.95, opacity: 0, duration: 0.2 });
+        gsap.to(modal, { 
+            opacity: 0, 
+            duration: 0.2, 
+            delay: 0.1,
+            onComplete: onComplete
+        });
+    } else {
+        modal.style.opacity = '0';
+        modalPanel.style.opacity = '0';
+        modalPanel.style.transform = 'scale(0.95)';
+        setTimeout(onComplete, 300); // Fallback timeout
+    }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lenis smooth scroll
     try {
-        if (window.Lenis) {
+        if (typeof Lenis !== 'undefined') {
             const lenis = new Lenis({
                 smoothWheel: true,
                 smoothTouch: false,
@@ -840,11 +863,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 requestAnimationFrame(raf);
             }
             requestAnimationFrame(raf);
+            console.log('Lenis smooth scroll initialized.');
+        } else {
+            console.warn('Lenis not available on DOMContentLoaded. Smooth scroll disabled.');
         }
-    } catch (e) { console.warn('Lenis not available:', e); }
+    } catch (e) { console.error('Error initializing Lenis:', e); }
 
-    const problematicSection = document.getElementById('szolgaltatasok');
-    
     // Instance for the bottom of the page
     new GradualBlur(document.body, {
         target: "page",
@@ -895,7 +919,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (mobileMenu) {
         // Close menu when clicking on navigation links
-        mobileMenu.querySelectorAll('a').forEach(link => {
+        mobileMenu.querySelectorAll('a, button').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
         
@@ -953,9 +977,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- FAQ Section Logic ---
-    if (typeof gsap === 'undefined') {
-        console.error("GSAP library not found. Accordion animations will not work.");
-    }
+    // Moved GSAP check inside the function that uses it.
     const faqData = [
         { id: 1, question: "Ez egy szoftver vagy egy szolgáltatás?", answer: "Ez egy all-in-one marketing rendszer, amit a vállalkozására szabunk. Nem csak egy szoftvert kap, hanem automatikusan beállított eszközöket (CRM, időpontfoglaló, weboldal, funnel, stb.), és betanítást és támogatást is mellé.", icon: "🤖" },
         { id: 2, question: "Miben különbözik ez a rendszer más szoftverektől?", answer: "Ez nem csak egy szoftver – hanem 33 szoftver ereje egy rendszerbe integrálva. Nem kell külön fizetnie több százezreket-milliókat weboldalért, időpontfoglalóért, e-mail küldőért, CRM-ért – itt minden egy helyen van, automatikusan beállítva.", icon: "✨" },
@@ -997,31 +1019,59 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!trigger || !content || !contentInner) return;
             trigger.addEventListener('click', () => {
                 const isOpen = item.classList.contains('is-open');
+                
+                // GSAP check
+                const useGsap = typeof gsap !== 'undefined';
+
                 allItems.forEach(otherItem => {
                     if (otherItem !== item && otherItem.classList.contains('is-open')) {
                         otherItem.classList.remove('is-open');
                         const oc = otherItem.querySelector('.faq-content');
                         if (oc) {
-                            gsap.to(oc, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });
+                            if(useGsap) {
+                                gsap.to(oc, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });
+                            } else {
+                                oc.style.height = '0';
+                                oc.style.opacity = '0';
+                                oc.style.visibility = 'hidden';
+                            }
                         }
                     }
                 });
                 item.classList.toggle('is-open');
                 if (isOpen) {
-                    gsap.to(content, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });
+                    if(useGsap) {
+                        gsap.to(content, { height: 0, opacity: 0, visibility: 'hidden', duration: 0.4, ease: 'power3.inOut' });
+                    } else {
+                        content.style.height = '0';
+                        content.style.opacity = '0';
+                        content.style.visibility = 'hidden';
+                    }
                 } else {
-                    gsap.set(content, { visibility: 'visible' });
-                    gsap.to(content, { height: contentInner.offsetHeight, opacity: 1, duration: 0.4, ease: 'power3.out' });
+                    content.style.visibility = 'visible';
+                    const targetHeight = contentInner.offsetHeight;
+                    if(useGsap) {
+                        gsap.to(content, { height: targetHeight, opacity: 1, duration: 0.4, ease: 'power3.out' });
+                    } else {
+                        content.style.height = targetHeight + 'px';
+                        content.style.opacity = '1';
+                    }
                 }
             });
         });
     }
-    // --- Features: Lucide + sequence reveal (TILT EFFECT REMOVED FOR PERFORMANCE) ---
+    // --- Features: Lucide + sequence reveal ---
     try {
         if (window.lucide && typeof window.lucide.createIcons === 'function') {
             window.lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
         } else {
             console.warn('Lucide script not yet loaded. Icons may not appear immediately.');
+            // Fallback to try again after a short delay
+            setTimeout(() => {
+                 if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                    window.lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
+                 }
+            }, 500);
         }
     } catch (e) { console.error('Error creating Lucide icons:', e); }
     const featuresRoot = document.querySelector('#szolgaltatasok');
